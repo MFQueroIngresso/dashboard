@@ -1,22 +1,19 @@
 # Nome do projeto
 
-    dashboard queroingresso.com
+dashboard queroingresso.com
 
 # Dados do projeto como está agora.
 
-    promo.queroingresso.com [ Dashboard ]
+promo.queroingresso.com [ Dashboard ]
 
 # Informações
 
-    Login ao Dashboard.
-        ## Níveis de acesso:
-            ### Login root
-            ### Produtor vê só os seus eventos.
+Login ao Dashboard. ## Níveis de acesso: ### Login root ### Produtor vê só os seus eventos.
 
 # Hospedagem
 
-    Hospedar com AWS ou do próprio Fabiano.
-    Repositório [ criar no perfil do cliente ]
+Hospedar com AWS ou do próprio Fabiano.
+Repositório [ criar no perfil do cliente ]
 
 # Tecnologia
 
@@ -26,14 +23,19 @@
 
 # Acompanhamento
 
-    Notion. [ vou criar o quadro ]
+Notion. [ vou criar o quadro ]
 
 # O que eu preciso
 
-    Login ao projeto atual e Rodar o projeto atual na máquina (código ou repositório).
+Login ao projeto atual e Rodar o projeto atual na máquina (código ou repositório).
 
 # Próximos passos
 
-    Vou listar as funcionalidades.
-    Definir o que conseguiremos entregar no primeiro mês.
-    Criaremos o projeto e já hospedaremos.
+Vou listar as funcionalidades.
+Definir o que conseguiremos entregar no primeiro mês.
+Criaremos o projeto e já hospedaremos.
+
+# Para o desenvolvedor
+
+netlify deploy --build --prod
+https://queroingresso-dashboard.netlify.app/

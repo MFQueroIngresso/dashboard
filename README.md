@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nome do projeto
 
-## Getting Started
+    dashboard queroingresso.com
 
-First, run the development server:
+# Dados do projeto como está agora.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    promo.queroingresso.com [ Dashboard ]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Informações
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+    Login ao Dashboard.
+        ## Níveis de acesso:
+            ### Login root
+            ### Produtor vê só os seus eventos.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Hospedagem
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    Hospedar com AWS ou do próprio Fabiano.
+    Repositório [ criar no perfil do cliente ]
 
-## Learn More
+# Tecnologia
 
-To learn more about Next.js, take a look at the following resources:
+    Next para facilitar criação de rotas e etc.
+    React Query para fazer cacheamento.
+    Backend em Node.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Acompanhamento
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    Notion. [ vou criar o quadro ]
 
-## Deploy on Vercel
+# O que eu preciso
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    Login ao projeto atual e Rodar o projeto atual na máquina (código ou repositório).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Próximos passos
+
+    Vou listar as funcionalidades.
+    Definir o que conseguiremos entregar no primeiro mês.
+    Criaremos o projeto e já hospedaremos.

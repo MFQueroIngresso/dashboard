@@ -54,7 +54,7 @@ export function Login() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: "url(background2.jpg)",
+            backgroundImage: "url(background3.jpeg)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -131,11 +131,6 @@ export function Login() {
                 <Grid item xs>
                   <Link href="#" variant="body2">
                     Esqueceu a senha?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    Não tem uma conta? Cadastre-se!
                   </Link>
                 </Grid>
               </Grid>

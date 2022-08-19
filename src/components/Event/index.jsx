@@ -15,17 +15,11 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Button from "@mui/material/Button";
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import { CalendarToday } from "@mui/icons-material";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Box from "@mui/material/Box";
 
 export function Event() {
   const [expanded, setExpanded] = React.useState(false);
@@ -35,39 +29,170 @@ export function Event() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, mt: 3, mb: 1 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            N
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Nando Reis"
-        subheader="19 de Agosto, 2022"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://queroingresso.com.br/image/cache/data/4182/4182_image-638x359.jpg"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          <b>123</b> ingressos vendidos.
+    <>
+      <Card sx={{ maxWidth: 345, mt: 3, mb: 1 }}>
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              N
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title="Nando Reis"
+          subheader="19 de Agosto, 2022"
+        />
+
+        <CardMedia
+          component="img"
+          height="194"
+          image="https://queroingresso.com.br/image/cache/data/4182/4182_image-638x359.jpg"
+          alt="Paella dish"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            <b>123</b> ingressos vendidos.
+            <br />
+            Receita total de <b>R$ 12.456,00</b>
+          </Typography>
+
           <br />
-          Receita total de <b>R$ 12.456,00</b>
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <Button variant="outlined" size="small">
-          Ver Detalhes
+          <Stack direction="row" spacing={1}>
+            <Chip
+              label="Faltam 12 dias para o evento"
+              size="small"
+              deleteIcon={<CalendarToday />}
+              onDelete={() => {}}
+              sx={{ pr: 1, pl: 1 }}
+            />
+          </Stack>
+        </CardContent>
+        <CardActions sx={{ ml: 1, mb: 2 }}>
+          <Button variant="outlined" size="small" onClick={handleExpandClick}>
+            Ver Detalhes
+          </Button>
+        </CardActions>
+      </Card>
+      <SwipeableDrawer
+        anchor="right"
+        open={expanded}
+        onClose={handleExpandClick}
+        onOpen={handleExpandClick}
+      >
+        <CardContent sx={{ p: 4 }} color="text.secondary">
+          <h2>Nando Reis</h2>
+          <Card sx={{ minWidth: 475, mt: 3 }}>
+            <CardContent>
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Ingressos Emitidos
+              </Typography>
+              <Box
+                sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}
+              >
+                <div>
+                  <Typography variant="h5" component="div">
+                    32
+                  </Typography>
+                  <Typography variant="body2">Hoje</Typography>
+                </div>
+                <div>
+                  <Typography variant="h5" component="div">
+                    345
+                  </Typography>
+                  <Typography variant="body2">Total</Typography>
+                </div>
+              </Box>
+            </CardContent>
+          </Card>
+
+          <Card sx={{ minWidth: 475, mt: 3 }}>
+            <CardContent>
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Faturamento
+              </Typography>
+              <Box
+                sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}
+              >
+                <div>
+                  <Typography variant="h5" component="div">
+                    R$ 100,00
+                  </Typography>
+                  <Typography variant="body2">Hoje</Typography>
+                </div>
+                <div>
+                  <Typography variant="h5" component="div">
+                    R$ 2.340,00
+                  </Typography>
+                  <Typography variant="body2">Total</Typography>
+                </div>
+              </Box>
+            </CardContent>
+          </Card>
+
+          <Card sx={{ minWidth: 475, mt: 3 }}>
+            <CardContent>
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Ticket Médio
+              </Typography>
+              <Box
+                sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}
+              >
+                <div>
+                  <Typography variant="h5" component="div">
+                    R$ 100,00
+                  </Typography>
+                </div>
+              </Box>
+            </CardContent>
+          </Card>
+
+          <Card sx={{ minWidth: 475, mt: 3 }}>
+            <CardContent>
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Média Diária
+              </Typography>
+              <Box
+                sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}
+              >
+                <div>
+                  <Typography variant="h5" component="div">
+                    100
+                  </Typography>
+                  <Typography variant="body2">Quantidade</Typography>
+                </div>
+                <div>
+                  <Typography variant="h5" component="div">
+                    R$ 240,00
+                  </Typography>
+                  <Typography variant="body2">Valor</Typography>
+                </div>
+              </Box>
+            </CardContent>
+          </Card>
+        </CardContent>
+        <Button variant="contained" sx={{ mr: 4, ml: 4 }}>
+          Estatísticas Completas
         </Button>
-      </CardActions>
-    </Card>
+      </SwipeableDrawer>
+    </>
   );
 }

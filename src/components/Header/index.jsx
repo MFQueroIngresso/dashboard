@@ -15,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Head from "next/head";
 
-const pages = ["Home", "Saldo PDV"];
+const pages = ["Saldo PDV"];
 const settings = ["Perfil do Usuário", "Minha Conta", "Visão Geral", "Sair"];
 
 export const Header = () => {

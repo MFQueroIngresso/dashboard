@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import Card from "@mui/material/Card";
+import { Card, Grid, Divider } from "@mui/material";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -46,20 +46,7 @@ export function Event() {
           subheader="19 de Agosto, 2022"
         />
 
-        <CardMedia
-          component="img"
-          height="194"
-          image="https://queroingresso.com.br/image/cache/data/4182/4182_image-638x359.jpg"
-          alt="Paella dish"
-        />
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            <b>123</b> ingressos vendidos.
-            <br />
-            Receita total de <b>R$ 12.456,00</b>
-          </Typography>
-
-          <br />
           <Stack direction="row" spacing={1}>
             <Chip
               label="Faltam 12 dias para o evento"
@@ -69,9 +56,63 @@ export function Event() {
               sx={{ pr: 1, pl: 1 }}
             />
           </Stack>
+          <br />
+          <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+            <Grid item xs={4} sx={{ textAlign: "center" }}>
+              <Typography variant="body2" color="info.main">
+                Hoje
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="text.secondary">
+                <b>Vendidos</b>
+                <br />
+                <b>Receita</b>
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="success.main">
+                <b>
+                  10
+                  <br />
+                  R$ 12.456,00
+                </b>
+              </Typography>
+            </Grid>
+          </Grid>
+          <Divider />
+          <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+            <Grid item xs={4} sx={{ textAlign: "center" }}>
+              <Typography variant="body2" color="info.main">
+                Total
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="text.secondary">
+                <b>Vendidos</b>
+                <br />
+                <b>Receita</b>
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="success.main">
+                <b>
+                  10
+                  <br />
+                  R$ 12.456,00
+                </b>
+              </Typography>
+            </Grid>
+          </Grid>
+          <Divider />
         </CardContent>
-        <CardActions sx={{ ml: 1, mb: 2 }}>
-          <Button variant="outlined" size="small" onClick={handleExpandClick}>
+        <CardActions sx={{ ml: 1, mb: 2, textAlign: "center" }}>
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={handleExpandClick}
+            sx={{ m: "auto" }}
+          >
             Ver Detalhes
           </Button>
         </CardActions>

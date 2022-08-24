@@ -30,7 +30,7 @@ export function Event() {
 
   return (
     <>
-      <Card sx={{ maxWidth: 345, mt: 3, mb: 1 }}>
+      <Card sx={{ maxWidth: "100%", minWidth: 345, mt: 3, mb: 1 }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

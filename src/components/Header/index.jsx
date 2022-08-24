@@ -45,18 +45,6 @@ export const Header = () => {
       </Head>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img
-            src="logo.png"
-            alt="Logotipo"
-            style={{
-              width: 140,
-              height: "auto",
-              paddingTop: "10px",
-              paddingBottom: "10px",
-              paddingRight: "20px",
-            }}
-          />
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -88,11 +76,22 @@ export const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  a<Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
+          <img
+            src="logo.png"
+            alt="Logotipo"
+            style={{
+              width: 140,
+              height: "auto",
+              paddingTop: "10px",
+              paddingBottom: "10px",
+              paddingRight: "20px",
+            }}
+          />
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

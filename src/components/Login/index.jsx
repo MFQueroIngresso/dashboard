@@ -13,6 +13,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Link from "next/link";
+import Head from "next/head";
 
 function Copyright(props) {
   return (
@@ -46,25 +47,29 @@ export function Login() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      <Head>
+        <title>Quero Ingresso</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100vh", background: "#00366e" }}
+        alignItems="center"
+        justifyContent="center"
+      >
         <CssBaseline />
+
         <Grid
           item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: "url(background3.jpeg)",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          xs={12}
+          sm={8}
+          md={3}
+          component={Paper}
+          elevation={6}
+          square
+          sx={{ borderRadius: "5px" }}
+        >
           <Box
             sx={{
               my: 8,

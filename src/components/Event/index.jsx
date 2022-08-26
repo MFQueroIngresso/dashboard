@@ -30,7 +30,7 @@ export function Event() {
 
   return (
     <>
-      <Card sx={{ maxWidth: "100%", minWidth: 345, mt: 3, mb: 1 }}>
+      <Card sx={{ maxWidth: "100%", minWidth: 345, mt: 0, mb: 1 }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -58,7 +58,7 @@ export function Event() {
           </Stack>
           <br />
           <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
-            <Grid item xs={4} sx={{ textAlign: "center" }}>
+            <Grid item xs={4} sx={{ textAlign: "right", pr: 1 }}>
               <Typography variant="body2" color="info.main">
                 Hoje
               </Typography>
@@ -67,29 +67,7 @@ export function Event() {
               <Typography variant="body2" color="text.secondary">
                 <b>Vendidos</b>
                 <br />
-                <b>Receita</b>
-              </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography variant="body2" color="success.main">
-                <b>
-                  10
-                  <br />
-                  R$ 12.456,00
-                </b>
-              </Typography>
-            </Grid>
-          </Grid>
-          <Divider />
-          <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
-            <Grid item xs={4} sx={{ textAlign: "center" }}>
-              <Typography variant="body2" color="info.main">
-                Total
-              </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography variant="body2" color="text.secondary">
-                <b>Vendidos</b>
+                <b>Cortesia</b>
                 <br />
                 <b>Receita</b>
               </Typography>
@@ -99,7 +77,65 @@ export function Event() {
                 <b>
                   10
                   <br />
+                  4
+                  <br />
                   R$ 12.456,00
+                </b>
+              </Typography>
+            </Grid>
+          </Grid>
+          <Divider />
+          <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+            <Grid item xs={4} sx={{ textAlign: "right", pr: 1 }}>
+              <Typography variant="body2" color="info.main">
+                Total
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="text.secondary">
+                <b>Vendidos</b>
+                <br />
+                <b>Cortesia</b>
+                <br />
+                <b>Receita</b>
+                <br />
+                <b>Ticket Médio</b>
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="success.main">
+                <b>
+                  10
+                  <br />
+                  4
+                  <br />
+                  R$ 12.456,00
+                  <br />
+                  R$ 223,00
+                </b>
+              </Typography>
+            </Grid>
+          </Grid>
+          <Divider />
+          <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+            <Grid item xs={4} sx={{ textAlign: "right", pr: 1 }}>
+              <Typography variant="body2" color="info.main">
+                Média Diária
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="text.secondary">
+                <b>Quantidade</b>
+                <br />
+                <b>Valor</b>
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="success.main">
+                <b>
+                  10
+                  <br />
+                  R$ 233,00
                 </b>
               </Typography>
             </Grid>

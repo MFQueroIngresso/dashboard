@@ -82,7 +82,7 @@ export function Sidebar() {
           },
         })}
       >
-        <Paper elevation={0} sx={{ maxWidth: "100%" }}>
+        <Paper elevation={0} sx={{ maxWidth: "100%", minWidth: "100%" }}>
           <FireNav component="nav" disablePadding>
             <Divider />
             <ListItem component="div" disablePadding>

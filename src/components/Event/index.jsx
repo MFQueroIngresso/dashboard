@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import { CalendarToday } from "@mui/icons-material";
+import Link from "next/link";
 
 export function Event() {
   return (
@@ -149,7 +150,9 @@ export function Event() {
         </CardContent>
         <CardActions sx={{ ml: 1, mb: 2, textAlign: "center" }}>
           <Button variant="outlined" size="small" sx={{ m: "auto" }}>
-            Ver Detalhes
+            <Link href="/">
+              <a>Ver Detalhes</a>
+            </Link>
           </Button>
         </CardActions>
       </Card>

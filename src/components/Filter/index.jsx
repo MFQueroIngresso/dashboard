@@ -1,18 +1,52 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Grid from "@mui/material/Grid";
 
 export function Filter() {
+  const [filter, setFilter] = React.useState("");
+
+  const handleChange = (event) => {
+    setFilter(event.target.value);
+  };
+
   return (
-    <Autocomplete
-      disablePortal
-      id="combo-box-demo"
-      options={top100Films}
-      sx={{ width: "80%", m: "auto" }}
-      renderInput={(params) => (
-        <TextField {...params} label="Encontrar Evento" />
-      )}
-    />
+    <Grid container spacing={3}>
+      <Grid item xs={12} sm={6} md={8} lg={3}>
+        <Box sx={{ minWidth: "100%" }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Filtrar</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={filter}
+              label="Filtrar"
+              onChange={handleChange}
+            >
+              <MenuItem value={10}>Todos os Eventos</MenuItem>
+              <MenuItem value={20}>Eventos Atuais</MenuItem>
+              <MenuItem value={30}>Eventos Passados</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+      </Grid>
+      <Grid item xs={12} sm={6} md={8} lg={9}>
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={top100Films}
+          sx={{ width: "100%" }}
+          renderInput={(params) => (
+            <TextField {...params} label="Encontrar Evento" />
+          )}
+        />
+      </Grid>
+    </Grid>
   );
 }
 

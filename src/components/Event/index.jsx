@@ -150,7 +150,7 @@ export function Event() {
         </CardContent>
         <CardActions sx={{ ml: 1, mb: 2, textAlign: "center" }}>
           <Button variant="outlined" size="small" sx={{ m: "auto" }}>
-            <Link href="/">
+            <Link href="/slug-do-evento">
               <a>Ver Detalhes</a>
             </Link>
           </Button>

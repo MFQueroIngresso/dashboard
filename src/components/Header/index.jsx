@@ -18,7 +18,7 @@ import Link from "next/link";
 const pages = ["Saldo PDV"];
 const settings = ["Perfil do Usuário", "Minha Conta", "Visão Geral", "Sair"];
 
-export const Header = () => {
+export const Header = ({ hideArea }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -85,17 +85,21 @@ export const Header = () => {
                 ))}
               </Menu>
             </Box>
-            <img
-              src="logo.png"
-              alt="Logotipo"
-              style={{
-                width: 140,
-                height: "auto",
-                paddingTop: "10px",
-                paddingBottom: "10px",
-                paddingRight: "20px",
-              }}
-            />
+            <Link href="/dashboard">
+              <a>
+                <img
+                  src="logo.png"
+                  alt="Logotipo"
+                  style={{
+                    width: 140,
+                    height: "auto",
+                    paddingTop: "10px",
+                    paddingBottom: "10px",
+                    paddingRight: "20px",
+                  }}
+                />
+              </a>
+            </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
@@ -145,13 +149,15 @@ export const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Typography
-        variant="h5"
-        textAlign="center"
-        sx={{ color: "primary.main", pt: 3, pb: 0, mb: 0 }}
-      >
-        Área do Produtor
-      </Typography>
+      {!hideArea && (
+        <Typography
+          variant="h5"
+          textAlign="center"
+          sx={{ color: "primary.main", pt: 3, pb: 0, mb: 0 }}
+        >
+          Área do Produtor
+        </Typography>
+      )}
     </>
   );
 };

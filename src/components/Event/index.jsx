@@ -43,7 +43,13 @@ export function Event() {
             </IconButton>
           }
           title="Nando Reis"
-          subheader="19 de Agosto, 2022"
+          subheader={
+            <>
+              19 de Agosto, 2022
+              <br />
+              <small>Hillarius VP | São José dos Campos - SP</small>
+            </>
+          }
         />
 
         <CardContent>
@@ -57,9 +63,14 @@ export function Event() {
             />
           </Stack>
           <br />
+          <Divider />
           <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
             <Grid item xs={4} sx={{ textAlign: "right", pr: 1 }}>
-              <Typography variant="body2" color="info.main">
+              <Typography
+                variant="body2"
+                color="info.main"
+                sx={{ fontWeight: "bold" }}
+              >
                 Hoje
               </Typography>
             </Grid>
@@ -87,7 +98,11 @@ export function Event() {
           <Divider />
           <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
             <Grid item xs={4} sx={{ textAlign: "right", pr: 1 }}>
-              <Typography variant="body2" color="info.main">
+              <Typography
+                variant="body2"
+                color="info.main"
+                sx={{ fontWeight: "bold" }}
+              >
                 Total
               </Typography>
             </Grid>
@@ -119,7 +134,11 @@ export function Event() {
           <Divider />
           <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
             <Grid item xs={4} sx={{ textAlign: "right", pr: 1 }}>
-              <Typography variant="body2" color="info.main">
+              <Typography
+                variant="body2"
+                color="info.main"
+                sx={{ fontWeight: "bold" }}
+              >
                 Média Diária
               </Typography>
             </Grid>

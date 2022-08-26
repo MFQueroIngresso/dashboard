@@ -13,8 +13,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Head from "next/head";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Link from "@mui/material/Link";
+import Link from "next/link";
 
 const pages = ["Saldo PDV"];
 const settings = ["Perfil do Usuário", "Minha Conta", "Visão Geral", "Sair"];
@@ -134,7 +133,11 @@ export const Header = () => {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    <Link href="/">
+                      <a>
+                        <Typography textAlign="center">{setting}</Typography>
+                      </a>
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>

@@ -30,7 +30,7 @@ export function Filter() {
             >
               <MenuItem value={10}>Todos os Eventos</MenuItem>
               <MenuItem value={20}>Eventos Atuais</MenuItem>
-              <MenuItem value={30}>Eventos Passados</MenuItem>
+              <MenuItem value={30}>Eventos Encerrados</MenuItem>
             </Select>
           </FormControl>
         </Box>

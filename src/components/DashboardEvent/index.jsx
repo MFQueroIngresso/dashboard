@@ -16,7 +16,7 @@ export const DashboardEvent = () => {
       <Grid item xs={12} sm={6} md={4} lg={4}>
         <IssuedTickets />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} sm={6}>
         <TicketsType />
       </Grid>
     </Grid>

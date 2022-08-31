@@ -4,6 +4,7 @@ import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { TicketsTypeChart } from "./TicketsTypeChart";
+import { TicketsTypeTable } from "./TicketsTypeTable";
 
 export const TicketsType = () => {
   return (
@@ -22,6 +23,7 @@ export const TicketsType = () => {
 
         <CardContent>
           <TicketsTypeChart />
+          <TicketsTypeTable />
         </CardContent>
       </Card>
     </>

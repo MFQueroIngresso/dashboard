@@ -15,10 +15,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Head from "next/head";
 import Link from "next/link";
 
-const pages = ["Saldo PDV"];
 const settings = ["Perfil do Usuário", "Minha Conta", "Visão Geral", "Sair"];
 
-export const Header = ({ hideArea }) => {
+export const Header = ({ hideArea, title }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -78,11 +77,13 @@ export const Header = ({ hideArea }) => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
+                <Link href="/saldo-pdv">
+                  <a>
+                    <MenuItem>
+                      <Typography textAlign="center">Saldo PDV</Typography>
+                    </MenuItem>
+                  </a>
+                </Link>
               </Menu>
             </Box>
             <Link href="/dashboard">
@@ -102,15 +103,13 @@ export const Header = ({ hideArea }) => {
             </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page}
-                </Button>
-              ))}
+              <Link href="/saldo-pdv">
+                <a>
+                  <Button sx={{ my: 2, color: "white", display: "block" }}>
+                    Saldo PDV
+                  </Button>
+                </a>
+              </Link>
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
@@ -155,7 +154,7 @@ export const Header = ({ hideArea }) => {
           textAlign="center"
           sx={{ color: "primary.main", pt: 3, pb: 0, mb: 0 }}
         >
-          Área do Produtor
+          {title || "Área do Produtor"}
         </Typography>
       )}
     </>

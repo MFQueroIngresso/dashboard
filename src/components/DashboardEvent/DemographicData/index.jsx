@@ -4,6 +4,7 @@ import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { DemographicDataChart } from "./DemographicDataChart";
+import { DemographicDataTable } from "./DemographicDataTable";
 
 export const DemographicData = () => {
   return (
@@ -22,6 +23,7 @@ export const DemographicData = () => {
 
         <CardContent>
           <DemographicDataChart />
+          <DemographicDataTable />
         </CardContent>
       </Card>
     </>

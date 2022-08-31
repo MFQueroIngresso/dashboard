@@ -3,6 +3,7 @@ import { IssuedTickets } from "./IssuedTickets";
 import { EventSituation } from "./EventSituation";
 import { GeneralCard } from "./GeneralCard";
 import { TicketsType } from "./TicketsType";
+import { DemographicData } from "./DemographicData";
 
 export const DashboardEvent = () => {
   return (
@@ -18,6 +19,9 @@ export const DashboardEvent = () => {
       </Grid>
       <Grid item xs={12} sm={6}>
         <TicketsType />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <DemographicData />
       </Grid>
     </Grid>
   );

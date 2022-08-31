@@ -14,43 +14,22 @@ import Stack from "@mui/material/Stack";
 import { CalendarToday } from "@mui/icons-material";
 import Link from "next/link";
 
-export function Event() {
+export const IssuedTickets = () => {
   return (
     <>
-      <Card sx={{ maxWidth: "100%", minWidth: 345, mt: 0, mb: 1 }}>
+      <Card sx={{ minWidth: "100%" }}>
         <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              N
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="Nando Reis"
+          sx={{ background: "#1976d2" }}
           subheader={
             <>
-              19 de Agosto, 2022
-              <br />
-              <small>Hillarius VP | São José dos Campos - SP</small>
+              <Typography variant="span" component="div" color="#ffffff">
+                Ingressos Emitidos
+              </Typography>
             </>
           }
         />
 
         <CardContent>
-          <Stack direction="row" spacing={1}>
-            <Chip
-              label="Faltam 12 dias para o evento"
-              size="small"
-              deleteIcon={<CalendarToday />}
-              onDelete={() => {}}
-              sx={{ pr: 1, pl: 1 }}
-            />
-          </Stack>
-          <br />
-          <Divider />
           <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
             <Grid item xs={4} sx={{ pr: 1 }}>
               <Typography
@@ -146,16 +125,8 @@ export function Event() {
               </Typography>
             </Grid>
           </Grid>
-          <Divider />
         </CardContent>
-        <CardActions sx={{ ml: 1, mb: 2, textAlign: "center" }}>
-          <Button variant="outlined" size="small" sx={{ m: "auto" }}>
-            <Link href="/slug-do-evento">
-              <a>Ver Detalhes</a>
-            </Link>
-          </Button>
-        </CardActions>
       </Card>
     </>
   );
-}
+};

@@ -103,13 +103,13 @@ export const Header = ({ hideArea, title }) => {
             </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <Link href="/saldo-pdv">
+              {/* <Link href="/saldo-pdv">
                 <a>
                   <Button sx={{ my: 2, color: "white", display: "block" }}>
                     Saldo PDV
                   </Button>
                 </a>
-              </Link>
+              </Link> */}
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>

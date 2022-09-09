@@ -8,7 +8,7 @@ export const data = {
   labels: ["Cortesia", "Vendas"],
   datasets: [
     {
-      label: "# of Votes",
+      label: "Número de Vendas",
       data: [11, 120],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",

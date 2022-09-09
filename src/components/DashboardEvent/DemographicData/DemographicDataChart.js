@@ -14,7 +14,7 @@ export const data = {
   labels: ["Entrada", "Camarote VIP", "Arquibancada"],
   datasets: [
     {
-      label: "# of Votes",
+      label: "Número de Vendas",
       data: [22, 39, 43],
       backgroundColor: [
         "rgba(255, 99, 132, 0.5)",

@@ -1,14 +1,14 @@
 import React from "react";
 import {
   Chart as ChartJS,
-  RadialLinearScale,
-  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
   Tooltip,
   Legend,
 } from "chart.js";
-import { PolarArea } from "react-chartjs-2";
-
-ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
+import { Bar } from "react-chartjs-2";
 
 export const data = {
   labels: ["Entrada", "Camarote VIP", "Arquibancada"],
@@ -26,6 +26,23 @@ export const data = {
   ],
 };
 
+const options = {
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
+};
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 export const DemographicDataChart = () => {
-  return <PolarArea data={data} />;
+  return <Bar options={options} data={data} />;
 };

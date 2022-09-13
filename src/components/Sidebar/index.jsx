@@ -23,10 +23,10 @@ import Link from "next/link";
 const data = [
   { icon: <People />, label: "Geral", link: "/slug-do-evento" },
   { icon: <Dns />, label: "Classes", link: "/classes" },
-  { icon: <PermMedia />, label: "PDV", link: "/slug-do-evento" },
-  { icon: <Public />, label: "Diários", link: "/slug-do-evento" },
-  { icon: <Public />, label: "Numerados", link: "/slug-do-evento" },
-  { icon: <Public />, label: "Cancelados", link: "/slug-do-evento" },
+  { icon: <PermMedia />, label: "PDV", link: "/pdv" },
+  { icon: <Public />, label: "Diários", link: "/diarios" },
+  { icon: <Public />, label: "Numerados", link: "/numerados" },
+  { icon: <Public />, label: "Cancelados", link: "/cancelados" },
 ];
 
 const data2 = [

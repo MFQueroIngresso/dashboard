@@ -40,7 +40,7 @@ const rows = [
 export function DemographicDataTable() {
   return (
     <>
-      <div style={{ height: 300, width: "100%" }}>
+      <div style={{ height: 476, width: "100%" }}>
         <br />
         <br />
         <DataGrid

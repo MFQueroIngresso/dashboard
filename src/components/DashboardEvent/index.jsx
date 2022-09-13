@@ -4,6 +4,8 @@ import { EventSituation } from "./EventSituation";
 import { GeneralCard } from "./GeneralCard";
 import { TicketsType } from "./TicketsType";
 import { DemographicData } from "./DemographicData";
+import { PaymentOrigem } from "./PaymentOrigem";
+import { PaymentType } from "./PaymentType";
 
 export const DashboardEvent = () => {
   return (
@@ -28,6 +30,12 @@ export const DashboardEvent = () => {
       </Grid>
       <Grid item xs={12} sm={6}>
         <DemographicData />
+      </Grid>
+      <Grid item xs={12} sm={12}>
+        <PaymentType />
+      </Grid>
+      <Grid item xs={12} sm={12}>
+        <PaymentOrigem />
       </Grid>
     </Grid>
   );

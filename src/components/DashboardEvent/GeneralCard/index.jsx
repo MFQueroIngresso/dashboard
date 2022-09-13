@@ -16,7 +16,7 @@ export const GeneralCard = ({
 }) => {
   return (
     <>
-      <Card sx={{ minWidth: "100%" }}>
+      <Card sx={{ minWidth: "100%", minHeight: "47.45%" }}>
         <CardHeader
           sx={{ background: "#1976d2" }}
           subheader={
@@ -30,6 +30,7 @@ export const GeneralCard = ({
 
         <CardContent>
           <Typography variant="body2" sx={{ mt: 1, textAlign: "center" }}>
+            {!chip && <br />}
             {textBold && <b>{textBold}</b>}
             {textNormal && (
               <>

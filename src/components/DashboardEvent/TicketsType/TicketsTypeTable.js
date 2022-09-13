@@ -15,7 +15,7 @@ const rows = [
 export function TicketsTypeTable() {
   return (
     <>
-      <div style={{ height: 300, width: "100%" }}>
+      <div style={{ height: 215, width: "100%" }}>
         <br />
         <br />
         <DataGrid

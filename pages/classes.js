@@ -1,9 +1,7 @@
-import Container from "@mui/material/Container";
 import { Header } from "../src/components/Header";
 import { Balance } from "../src/components/Balance";
 import { useRouter } from "next/router";
 import { ContentWithSidebar } from "../src/components/ContentWithSidebar";
-import { DashboardEvent } from "../src/components/DashboardEvent";
 import { HeaderTotal } from "../src/components/HeaderTotal";
 
 const Classes = () => {

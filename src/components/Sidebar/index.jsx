@@ -18,14 +18,15 @@ import People from "@mui/icons-material/People";
 import PermMedia from "@mui/icons-material/PermMedia";
 import Dns from "@mui/icons-material/Dns";
 import Public from "@mui/icons-material/Public";
+import Link from "next/link";
 
 const data = [
-  { icon: <People />, label: "Geral" },
-  { icon: <Dns />, label: "Classes" },
-  { icon: <PermMedia />, label: "PDV" },
-  { icon: <Public />, label: "Diários" },
-  { icon: <Public />, label: "Numerados" },
-  { icon: <Public />, label: "Cancelados" },
+  { icon: <People />, label: "Geral", link: "/slug-do-evento" },
+  { icon: <Dns />, label: "Classes", link: "/classes" },
+  { icon: <PermMedia />, label: "PDV", link: "/slug-do-evento" },
+  { icon: <Public />, label: "Diários", link: "/slug-do-evento" },
+  { icon: <Public />, label: "Numerados", link: "/slug-do-evento" },
+  { icon: <Public />, label: "Cancelados", link: "/slug-do-evento" },
 ];
 
 const data2 = [
@@ -145,21 +146,29 @@ export function Sidebar() {
               </ListItemButton>
               {open &&
                 data.map((item) => (
-                  <ListItemButton
-                    key={item.label}
-                    sx={{ py: 0, minHeight: 32, color: "rgba(255,255,255,.8)" }}
-                  >
-                    <ListItemIcon sx={{ color: "inherit" }}>
-                      {item.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{
-                        fontSize: 14,
-                        fontWeight: "medium",
-                      }}
-                    />
-                  </ListItemButton>
+                  <Link href={item.link} key={item}>
+                    <a>
+                      <ListItemButton
+                        key={item.label}
+                        sx={{
+                          py: 0,
+                          minHeight: 32,
+                          color: "rgba(255,255,255,.8)",
+                        }}
+                      >
+                        <ListItemIcon sx={{ color: "inherit" }}>
+                          {item.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            fontSize: 14,
+                            fontWeight: "medium",
+                          }}
+                        />
+                      </ListItemButton>
+                    </a>
+                  </Link>
                 ))}
             </Box>
 

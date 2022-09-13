@@ -1,5 +1,6 @@
 import Container from "@mui/material/Container";
 import { Header } from "../src/components/Header";
+import { PDVBalance } from "../src/components/PDVBalance";
 import { useRouter } from "next/router";
 import { ContentWithSidebar } from "../src/components/ContentWithSidebar";
 import { DashboardEvent } from "../src/components/DashboardEvent";
@@ -11,10 +12,10 @@ const EventPage = () => {
 
   return (
     <>
-      <Header title="Dashboard" />
+      <Header title="Classes" />
       <ContentWithSidebar>
         <HeaderTotal />
-        <DashboardEvent />
+        <PDVBalance />
       </ContentWithSidebar>
     </>
   );

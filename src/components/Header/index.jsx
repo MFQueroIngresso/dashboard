@@ -48,44 +48,6 @@ export const Header = ({ hideArea, title }) => {
         </Head>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                <Link href="/saldo-pdv">
-                  <a>
-                    <MenuItem>
-                      <Typography textAlign="center">Saldo PDV</Typography>
-                    </MenuItem>
-                  </a>
-                </Link>
-              </Menu>
-            </Box>
             <Link href="/dashboard">
               <a>
                 <img
@@ -103,13 +65,21 @@ export const Header = ({ hideArea, title }) => {
             </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {/* <Link href="/saldo-pdv">
-                <a>
-                  <Button sx={{ my: 2, color: "white", display: "block" }}>
-                    Saldo PDV
-                  </Button>
-                </a>
-              </Link> */}
+              {!hideArea && (
+                <Typography
+                  variant="p"
+                  textAlign="center"
+                  sx={{
+                    pb: 0,
+                    mb: 0,
+                    textTransform: "uppercase",
+                    fontWeight: "bold",
+                    letterSpacing: 3,
+                  }}
+                >
+                  · {title || "Área do Produtor"}
+                </Typography>
+              )}
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
@@ -148,15 +118,6 @@ export const Header = ({ hideArea, title }) => {
           </Toolbar>
         </Container>
       </AppBar>
-      {!hideArea && (
-        <Typography
-          variant="h5"
-          textAlign="center"
-          sx={{ color: "primary.main", pt: 3, pb: 0, mb: 0 }}
-        >
-          {title || "Área do Produtor"}
-        </Typography>
-      )}
     </>
   );
 };

@@ -30,19 +30,27 @@ const data = [
 ];
 
 const data2 = [
-  { icon: <People />, label: "Comissários" },
-  { icon: <Dns />, label: "Site Detalhados" },
-  { icon: <PermMedia />, label: "Detalhados" },
+  { icon: <People />, label: "Comissários", link: "/comissarios" },
+  { icon: <Dns />, label: "Site Detalhados", link: "/site-detalhados" },
+  { icon: <PermMedia />, label: "Detalhados", link: "/detalhados" },
 ];
 
-const data3 = [{ icon: <People />, label: "Visualização x Vendas Web" }];
+const data3 = [
+  {
+    icon: <People />,
+    label: "Visualização x Vendas Web",
+    link: "/visualizacao-x-vendas-web",
+  },
+];
 
 const data4 = [
-  { icon: <People />, label: "Sangrias" },
-  { icon: <People />, label: "Comprovantes" },
+  { icon: <People />, label: "Sangrias", link: "/sangrias" },
+  { icon: <People />, label: "Comprovantes", link: "/comprovantes" },
 ];
 
-const data5 = [{ icon: <People />, label: "Gestão de Lotes" }];
+const data5 = [
+  { icon: <People />, label: "Gestão de Lotes", link: "/gestao-de-lotes" },
+];
 
 const FireNav = styled(List)({
   "& .MuiListItemButton-root": {
@@ -217,21 +225,29 @@ export function Sidebar() {
               </ListItemButton>
               {open2 &&
                 data2.map((item) => (
-                  <ListItemButton
-                    key={item.label}
-                    sx={{ py: 0, minHeight: 32, color: "rgba(255,255,255,.8)" }}
-                  >
-                    <ListItemIcon sx={{ color: "inherit" }}>
-                      {item.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{
-                        fontSize: 14,
-                        fontWeight: "medium",
-                      }}
-                    />
-                  </ListItemButton>
+                  <Link href={item.link} key={item}>
+                    <a>
+                      <ListItemButton
+                        key={item.label}
+                        sx={{
+                          py: 0,
+                          minHeight: 32,
+                          color: "rgba(255,255,255,.8)",
+                        }}
+                      >
+                        <ListItemIcon sx={{ color: "inherit" }}>
+                          {item.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            fontSize: 14,
+                            fontWeight: "medium",
+                          }}
+                        />
+                      </ListItemButton>
+                    </a>
+                  </Link>
                 ))}
             </Box>
 
@@ -280,21 +296,29 @@ export function Sidebar() {
               </ListItemButton>
               {open3 &&
                 data3.map((item) => (
-                  <ListItemButton
-                    key={item.label}
-                    sx={{ py: 0, minHeight: 32, color: "rgba(255,255,255,.8)" }}
-                  >
-                    <ListItemIcon sx={{ color: "inherit" }}>
-                      {item.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{
-                        fontSize: 14,
-                        fontWeight: "medium",
-                      }}
-                    />
-                  </ListItemButton>
+                  <Link href={item.link} key={item}>
+                    <a>
+                      <ListItemButton
+                        key={item.label}
+                        sx={{
+                          py: 0,
+                          minHeight: 32,
+                          color: "rgba(255,255,255,.8)",
+                        }}
+                      >
+                        <ListItemIcon sx={{ color: "inherit" }}>
+                          {item.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            fontSize: 14,
+                            fontWeight: "medium",
+                          }}
+                        />
+                      </ListItemButton>
+                    </a>
+                  </Link>
                 ))}
             </Box>
 
@@ -343,21 +367,29 @@ export function Sidebar() {
               </ListItemButton>
               {open4 &&
                 data4.map((item) => (
-                  <ListItemButton
-                    key={item.label}
-                    sx={{ py: 0, minHeight: 32, color: "rgba(255,255,255,.8)" }}
-                  >
-                    <ListItemIcon sx={{ color: "inherit" }}>
-                      {item.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{
-                        fontSize: 14,
-                        fontWeight: "medium",
-                      }}
-                    />
-                  </ListItemButton>
+                  <Link href={item.link} key={item}>
+                    <a>
+                      <ListItemButton
+                        key={item.label}
+                        sx={{
+                          py: 0,
+                          minHeight: 32,
+                          color: "rgba(255,255,255,.8)",
+                        }}
+                      >
+                        <ListItemIcon sx={{ color: "inherit" }}>
+                          {item.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            fontSize: 14,
+                            fontWeight: "medium",
+                          }}
+                        />
+                      </ListItemButton>
+                    </a>
+                  </Link>
                 ))}
             </Box>
 
@@ -406,21 +438,29 @@ export function Sidebar() {
               </ListItemButton>
               {open5 &&
                 data5.map((item) => (
-                  <ListItemButton
-                    key={item.label}
-                    sx={{ py: 0, minHeight: 32, color: "rgba(255,255,255,.8)" }}
-                  >
-                    <ListItemIcon sx={{ color: "inherit" }}>
-                      {item.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{
-                        fontSize: 14,
-                        fontWeight: "medium",
-                      }}
-                    />
-                  </ListItemButton>
+                  <Link href={item.link} key={item}>
+                    <a>
+                      <ListItemButton
+                        key={item.label}
+                        sx={{
+                          py: 0,
+                          minHeight: 32,
+                          color: "rgba(255,255,255,.8)",
+                        }}
+                      >
+                        <ListItemIcon sx={{ color: "inherit" }}>
+                          {item.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            fontSize: 14,
+                            fontWeight: "medium",
+                          }}
+                        />
+                      </ListItemButton>
+                    </a>
+                  </Link>
                 ))}
             </Box>
           </FireNav>

@@ -4,40 +4,46 @@ import { useRouter } from "next/router";
 import { ContentWithSidebar } from "../src/components/ContentWithSidebar";
 import { HeaderTotal } from "../src/components/HeaderTotal";
 
-const GerarCortesias = () => {
+const Comissarios = () => {
   const router = useRouter();
   const { event } = router.query;
 
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
-      field: "criadoem",
-      headerName: "Criado em",
-      width: 200,
+      field: "nome",
+      headerName: "Nome",
+      width: 100,
     },
     {
-      field: "classe",
-      headerName: "Classe",
+      field: "valun",
+      headerName: "Valor Un.",
       type: "number",
       width: 200,
     },
     {
-      field: "qtdgerada",
-      headerName: "Qtd Gerada",
+      field: "qtdbruto",
+      headerName: "Qtd. Bruto",
       type: "number",
       width: 100,
     },
     {
-      field: "emissor",
-      headerName: "Emissor",
+      field: "qtd",
+      headerName: "Qtd. (%)",
       type: "number",
-      width: 280,
+      width: 100,
     },
     {
-      field: "acao",
-      headerName: "Ação",
+      field: "valorbruto",
+      headerName: "Valor Bruto",
       type: "number",
-      width: 150,
+      width: 100,
+    },
+    {
+      field: "valor_percent",
+      headerName: "Valor. (%)",
+      type: "number",
+      width: 280,
     },
   ];
 
@@ -45,7 +51,7 @@ const GerarCortesias = () => {
 
   return (
     <>
-      <Header title="Gerar Cortesias" />
+      <Header title="Vendas Bar" />
       <ContentWithSidebar>
         <HeaderTotal />
         <Balance rows={rows} columns={columns} />
@@ -54,4 +60,4 @@ const GerarCortesias = () => {
   );
 };
 
-export default GerarCortesias;
+export default Comissarios;

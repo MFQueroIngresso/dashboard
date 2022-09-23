@@ -39,8 +39,8 @@ const data2 = [
 const data3 = [
   {
     icon: <People />,
-    label: "Visualização x Vendas Web",
-    link: "/visualizacao-x-vendas-web",
+    label: "Detalhado",
+    link: "/detalhado",
   },
 ];
 
@@ -285,7 +285,7 @@ export function Sidebar() {
                     lineHeight: "20px",
                     mb: "2px",
                   }}
-                  secondary="Visualização x Vendas Web"
+                  secondary="Detalhado"
                   secondaryTypographyProps={{
                     noWrap: true,
                     fontSize: 12,

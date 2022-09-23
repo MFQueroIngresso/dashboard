@@ -45,7 +45,8 @@ const data3 = [
 ];
 
 const data4 = [
-  { icon: <People />, label: "Sangrias", link: "/sangrias" },
+  { icon: <People />, label: "Sangrias PDV", link: "/sangrias" },
+  { icon: <People />, label: "Sangrias Web", link: "/sangrias" },
   { icon: <People />, label: "Comprovantes", link: "/comprovantes" },
 ];
 
@@ -356,7 +357,7 @@ export function Sidebar() {
                     lineHeight: "20px",
                     mb: "2px",
                   }}
-                  secondary="Sangrias, Comprovantes"
+                  secondary="Sangrias PDV, Sangrias Web, Comprovantes"
                   secondaryTypographyProps={{
                     noWrap: true,
                     fontSize: 12,

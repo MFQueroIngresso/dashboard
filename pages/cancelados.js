@@ -17,19 +17,19 @@ const Cancelados = () => {
     },
     {
       field: "vendas",
-      headerName: "Vendas",
+      headerName: "Total de Venda",
       type: "number",
       width: 150,
     },
     {
       field: "cortesia",
-      headerName: "Cortesia",
+      headerName: "Total Cancelados",
       type: "number",
       width: 150,
     },
     {
       field: "total",
-      headerName: "Total",
+      headerName: "Total Final",
       type: "number",
       width: 150,
     },

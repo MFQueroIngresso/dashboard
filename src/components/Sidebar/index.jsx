@@ -53,6 +53,12 @@ const data5 = [
   { icon: <People />, label: "Gerar Cortesias", link: "/gerar-cortesias" },
 ];
 
+const data6 = [
+  { icon: <People />, label: "Vendas Bar", link: "/vendas-bar" },
+  { icon: <People />, label: "Estoque Bar", link: "/estoque-bar" },
+  { icon: <People />, label: "Caixa Bar", link: "/caixa-bar" },
+];
+
 const FireNav = styled(List)({
   "& .MuiListItemButton-root": {
     paddingLeft: 24,
@@ -73,6 +79,7 @@ export function Sidebar() {
   const [open3, setOpen3] = React.useState(false);
   const [open4, setOpen4] = React.useState(false);
   const [open5, setOpen5] = React.useState(false);
+  const [open6, setOpen6] = React.useState(false);
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -439,6 +446,77 @@ export function Sidebar() {
               </ListItemButton>
               {open5 &&
                 data5.map((item) => (
+                  <Link href={item.link} key={item}>
+                    <a>
+                      <ListItemButton
+                        key={item.label}
+                        sx={{
+                          py: 0,
+                          minHeight: 32,
+                          color: "rgba(255,255,255,.8)",
+                        }}
+                      >
+                        <ListItemIcon sx={{ color: "inherit" }}>
+                          {item.icon}
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            fontSize: 14,
+                            fontWeight: "medium",
+                          }}
+                        />
+                      </ListItemButton>
+                    </a>
+                  </Link>
+                ))}
+            </Box>
+
+            <Divider />
+            <Box
+              sx={{
+                bgcolor: open6 ? "rgba(71, 98, 130, 0.2)" : null,
+                pb: open6 ? 2 : 0,
+              }}
+            >
+              <ListItemButton
+                alignItems="flex-start"
+                onClick={() => setOpen6(!open6)}
+                sx={{
+                  px: 3,
+                  pt: 2.5,
+                  pb: open6 ? 0 : 2.5,
+                  "&:hover, &:focus": { "& svg": { opacity: open6 ? 1 : 0 } },
+                }}
+              >
+                <ListItemText
+                  primary="Bar"
+                  primaryTypographyProps={{
+                    fontSize: 15,
+                    fontWeight: "medium",
+                    lineHeight: "20px",
+                    mb: "2px",
+                  }}
+                  secondary="Vendas Bar, Estoque Bar, Caixa Bar"
+                  secondaryTypographyProps={{
+                    noWrap: true,
+                    fontSize: 12,
+                    lineHeight: "16px",
+                    color: open6 ? "rgba(0,0,0,0)" : "rgba(255,255,255,0.5)",
+                  }}
+                  sx={{ my: 0 }}
+                />
+                <KeyboardArrowDown
+                  sx={{
+                    mr: -1,
+                    opacity: 0,
+                    transform: open6 ? "rotate(-180deg)" : "rotate(0)",
+                    transition: "0.2s",
+                  }}
+                />
+              </ListItemButton>
+              {open6 &&
+                data6.map((item) => (
                   <Link href={item.link} key={item}>
                     <a>
                       <ListItemButton

@@ -15,7 +15,7 @@ export const PaymentOrigem = () => {
           subheader={
             <>
               <Typography variant="span" component="div" color="#ffffff">
-                Origem do Pagamento
+                Origem da Venda
               </Typography>
             </>
           }

@@ -43,19 +43,27 @@ const rows = [
     total: 189,
     valor: "R$ 1340,00",
   },
+  {
+    id: 5,
+    tipo: "Dinheiro",
+    site: 112,
+    pontodevenda: 80,
+    total: 189,
+    valor: "R$ 1340,00",
+  },
 ];
 
 export function PaymentTypeDataTable() {
   return (
     <>
-      <div style={{ height: 319, width: "100%" }}>
+      <div style={{ height: 369, width: "100%" }}>
         <br />
         <br />
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={4}
-          rowsPerPageOptions={[4]}
+          pageSize={5}
+          rowsPerPageOptions={[5]}
         />
       </div>
       <br />

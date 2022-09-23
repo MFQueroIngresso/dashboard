@@ -38,7 +38,7 @@ export const options = {
   },
 };
 
-const labels = ["Cartão de Crédito", "Débito", "Parcelado", "PIX"];
+const labels = ["Cartão de Crédito", "Débito", "Parcelado", "PIX", "Dinheiro"];
 
 export const data = {
   labels,

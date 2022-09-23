@@ -27,6 +27,7 @@ const data = [
   { icon: <Public />, label: "Diários", link: "/diarios" },
   { icon: <Public />, label: "Numerados", link: "/numerados" },
   { icon: <Public />, label: "Cancelados", link: "/cancelados" },
+  { icon: <Public />, label: "Por Lote", link: "/por-lote" },
 ];
 
 const data2 = [
@@ -142,7 +143,7 @@ export function Sidebar() {
                     lineHeight: "20px",
                     mb: "2px",
                   }}
-                  secondary="Classes, PDV, Diários, Numerados, Cancelados"
+                  secondary="Classes, PDV, Diários, Numerados, Cancelados, Por Lote"
                   secondaryTypographyProps={{
                     noWrap: true,
                     fontSize: 12,

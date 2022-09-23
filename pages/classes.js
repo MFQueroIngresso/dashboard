@@ -113,7 +113,19 @@ const Classes = () => {
       <Header title="Classes" />
       <ContentWithSidebar>
         <HeaderTotal />
-        <Balance rows={rows} columns={columns} />
+        <h1
+          style={{
+            textAlign: "center",
+            marginTop: 140,
+            textTransform: "uppercase",
+            color: "gray",
+            fontWeight: 200,
+            letterSpacing: 7,
+          }}
+        >
+          Sem Dados
+        </h1>
+        {/* <Balance rows={rows} columns={columns} /> */}
       </ContentWithSidebar>
     </>
   );

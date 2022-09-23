@@ -50,6 +50,7 @@ const data4 = [
 
 const data5 = [
   { icon: <People />, label: "Gestão de Lotes", link: "/gestao-de-lotes" },
+  { icon: <People />, label: "Gerar Cortesias", link: "/gerar-cortesias" },
 ];
 
 const FireNav = styled(List)({

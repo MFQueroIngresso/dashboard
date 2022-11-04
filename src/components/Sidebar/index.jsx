@@ -109,14 +109,16 @@ export function Sidebar({ handleSidebar, sidebarOpen }) {
                 <ListItemIcon>
                   <Home color="primary" />
                 </ListItemIcon>
-                <ListItemText
-                  primary="Geral"
-                  primaryTypographyProps={{
-                    color: "primary",
-                    fontWeight: "medium",
-                    variant: "body2",
-                  }}
-                />
+                {sidebarOpen && (
+                  <ListItemText
+                    primary="Geral"
+                    primaryTypographyProps={{
+                      color: "primary",
+                      fontWeight: "medium",
+                      variant: "body2",
+                    }}
+                  />
+                )}
               </ListItemButton>
             </ListItem>
             {sidebarOpen && (

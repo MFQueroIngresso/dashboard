@@ -18,6 +18,7 @@ export const ContentWithSidebar = ({ children }) => {
           sm={12}
           md={sidebarOpen ? 3 : 1}
           lg={sidebarOpen ? 3 : 1}
+          sx={{ pr: sidebarOpen ? 3 : 6 }}
         >
           <Sidebar handleSidebar={handleSidebar} sidebarOpen={sidebarOpen} />
         </Grid>

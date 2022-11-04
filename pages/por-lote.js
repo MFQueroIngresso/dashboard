@@ -71,19 +71,7 @@ const PorLote = () => {
       <Header title="Por Lote" />
       <ContentWithSidebar>
         <HeaderTotal />
-        <h1
-          style={{
-            textAlign: "center",
-            marginTop: 140,
-            textTransform: "uppercase",
-            color: "gray",
-            fontWeight: 200,
-            letterSpacing: 7,
-          }}
-        >
-          Sem Dados
-        </h1>
-        {/* <Balance rows={rows} columns={columns} /> */}
+        <Balance rows={rows} columns={columns} />
       </ContentWithSidebar>
     </>
   );

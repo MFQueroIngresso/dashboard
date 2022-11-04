@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Card, Grid, Divider, Typography } from "@mui/material";
 import { IssuedTickets } from "./IssuedTickets";
 import { EventSituation } from "./EventSituation";
 import { GeneralCard } from "./GeneralCard";
@@ -17,12 +17,45 @@ export const DashboardEvent = () => {
         <IssuedTickets />
       </Grid>
       <Grid item xs={12} sm={12} md={4} lg={4}>
-        <GeneralCard title="Ticket Médio" textBold="R$ 45,00" />
         <GeneralCard
-          title="Média Diária"
-          textBold="139 ingressos"
-          chip
-          chipText="R$ 45,00"
+          title="Faturamento"
+          textBold={
+            <>
+              <Grid container spacing={1} sx={{ mt: -2, mb: 2 }}>
+                <Grid item xs={6} sx={{ pr: 1 }}>
+                  <Typography
+                    variant="body2"
+                    color="info.main"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    Hoje
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="body2" color="text.secondary">
+                    <b>R$ 12.456,00</b>
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Divider />
+              <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+                <Grid item xs={6} sx={{ pr: 1 }}>
+                  <Typography
+                    variant="body2"
+                    color="info.main"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    Total
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="body2" color="text.secondary">
+                    <b>R$ 12.456,00</b>
+                  </Typography>
+                </Grid>
+              </Grid>
+            </>
+          }
         />
       </Grid>
       <Grid item xs={12} sm={6}>

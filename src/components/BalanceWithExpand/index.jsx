@@ -37,7 +37,7 @@ function Row(props) {
             </>
           )}
         </TableCell>
-        <TableCell align="right">{row.classe}</TableCell>
+        <TableCell align="right">{row.slug}</TableCell>
         <TableCell align="right">{row.vendas}</TableCell>
         <TableCell align="right">{row.cortesia}</TableCell>
         <TableCell align="right">{row.total}</TableCell>
@@ -68,7 +68,7 @@ function Row(props) {
                         {row?.expand?.map((item) => (
                           <>
                             <TableCell></TableCell>
-                            <TableCell key={item}>{item.classe}</TableCell>
+                            <TableCell key={item}>{item.slug}</TableCell>
                             <TableCell key={item}>{item.vendas}</TableCell>
                             <TableCell key={item}>{item.cortesia}</TableCell>
                             <TableCell key={item}>{item.total}</TableCell>

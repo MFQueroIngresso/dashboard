@@ -44,14 +44,14 @@ const Classes = () => {
   const rows = [
     {
       id: 1,
-      classe: "Área Premium",
+      slug: "Área Premium",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
       expand: [
         {
-          classe: "Área Premium",
+          slug: "Área Premium",
           vendas: 10,
           cortesia: 10,
           total: 40,
@@ -61,14 +61,14 @@ const Classes = () => {
     },
     {
       id: 2,
-      classe: "Área VIP Camarote",
+      slug: "Área VIP Camarote",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
       expand: [
         {
-          classe: "Área Premium",
+          slug: "Área Premium",
           vendas: 10,
           cortesia: 10,
           total: 40,
@@ -78,7 +78,7 @@ const Classes = () => {
     },
     {
       id: 8,
-      classe: "Total (Vendas + Cortesia)",
+      slug: "Total (Vendas + Cortesia)",
       vendas: 10,
       cortesia: 10,
       total: 40,

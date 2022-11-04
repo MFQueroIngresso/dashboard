@@ -1,5 +1,5 @@
 import { Header } from "../src/components/Header";
-import { Balance } from "../src/components/Balance";
+import { BalanceWithExpand } from "../src/components/BalanceWithExpand";
 import { useRouter } from "next/router";
 import { ContentWithSidebar } from "../src/components/ContentWithSidebar";
 import { HeaderTotal } from "../src/components/HeaderTotal";
@@ -9,7 +9,7 @@ const PDV = () => {
   const { event } = router.query;
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { field: "id", headerName: "", width: 90 },
     {
       field: "pdv",
       headerName: "PDV",
@@ -44,67 +44,147 @@ const PDV = () => {
   const rows = [
     {
       id: 1,
-      pdv: "QUEROINGRESSO - INTERNET",
+      slug: "QUEROINGRESSO - INTERNET",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 2,
-      pdv: "STUDIO DIGITAL - GUARAREMA",
+      slug: "STUDIO DIGITAL - GUARAREMA",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 3,
-      pdv: "QUEROINGRESSO - INTERNET",
+      slug: "QUEROINGRESSO - INTERNET",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 4,
-      pdv: "STUDIO DIGITAL - GUARAREMA",
+      slug: "STUDIO DIGITAL - GUARAREMA",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 5,
-      pdv: "QUEROINGRESSO - INTERNET",
+      slug: "QUEROINGRESSO - INTERNET",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 6,
-      pdv: "STUDIO DIGITAL - GUARAREMA",
+      slug: "STUDIO DIGITAL - GUARAREMA",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 7,
-      pdv: "QUEROINGRESSO - INTERNET",
+      slug: "QUEROINGRESSO - INTERNET",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 8,
-      pdv: "STUDIO DIGITAL - GUARAREMA",
+      slug: "STUDIO DIGITAL - GUARAREMA",
       vendas: 10,
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          slug: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
+    },
+    {
+      id: 9,
+      slug: "Total",
+      vendas: 10,
+      cortesia: 10,
+      total: 40,
+      valor: "R$ 130,000.00",
     },
   ];
 
@@ -113,19 +193,7 @@ const PDV = () => {
       <Header title="PDV" />
       <ContentWithSidebar>
         <HeaderTotal />
-        <h1
-          style={{
-            textAlign: "center",
-            marginTop: 140,
-            textTransform: "uppercase",
-            color: "gray",
-            fontWeight: 200,
-            letterSpacing: 7,
-          }}
-        >
-          Sem Dados
-        </h1>
-        {/* <Balance rows={rows} columns={columns} /> */}
+        <BalanceWithExpand rows={rows} columns={columns} />
       </ContentWithSidebar>
     </>
   );

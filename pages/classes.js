@@ -1,5 +1,5 @@
 import { Header } from "../src/components/Header";
-import { Balance } from "../src/components/Balance";
+import { BalanceWithExpand } from "../src/components/BalanceWithExpand";
 import { useRouter } from "next/router";
 import { ContentWithSidebar } from "../src/components/ContentWithSidebar";
 import { HeaderTotal } from "../src/components/HeaderTotal";
@@ -9,7 +9,7 @@ const Classes = () => {
   const { event } = router.query;
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { field: "id", headerName: "", width: 90 },
     {
       field: "classe",
       headerName: "Classe",
@@ -49,6 +49,15 @@ const Classes = () => {
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
+      expand: [
+        {
+          classe: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 2,
@@ -57,54 +66,23 @@ const Classes = () => {
       cortesia: 10,
       total: 40,
       valor: "R$ 10,000.00",
-    },
-    {
-      id: 3,
-      classe: "Área Premium",
-      vendas: 10,
-      cortesia: 10,
-      total: 40,
-      valor: "R$ 10,000.00",
-    },
-    {
-      id: 4,
-      classe: "Área VIP Camarote",
-      vendas: 10,
-      cortesia: 10,
-      total: 40,
-      valor: "R$ 10,000.00",
-    },
-    {
-      id: 5,
-      classe: "Área Premium",
-      vendas: 10,
-      cortesia: 10,
-      total: 40,
-      valor: "R$ 10,000.00",
-    },
-    {
-      id: 6,
-      classe: "Área VIP Camarote",
-      vendas: 10,
-      cortesia: 10,
-      total: 40,
-      valor: "R$ 10,000.00",
-    },
-    {
-      id: 7,
-      classe: "Área Premium",
-      vendas: 10,
-      cortesia: 10,
-      total: 40,
-      valor: "R$ 10,000.00",
+      expand: [
+        {
+          classe: "Área Premium",
+          vendas: 10,
+          cortesia: 10,
+          total: 40,
+          valor: "R$ 10,000.00",
+        },
+      ],
     },
     {
       id: 8,
-      classe: "Área VIP Camarote",
+      classe: "Total (Vendas + Cortesia)",
       vendas: 10,
       cortesia: 10,
       total: 40,
-      valor: "R$ 10,000.00",
+      valor: "R$ 20,000.00",
     },
   ];
 
@@ -113,19 +91,7 @@ const Classes = () => {
       <Header title="Classes" />
       <ContentWithSidebar>
         <HeaderTotal />
-        <h1
-          style={{
-            textAlign: "center",
-            marginTop: 140,
-            textTransform: "uppercase",
-            color: "gray",
-            fontWeight: 200,
-            letterSpacing: 7,
-          }}
-        >
-          Sem Dados
-        </h1>
-        {/* <Balance rows={rows} columns={columns} /> */}
+        <BalanceWithExpand rows={rows} columns={columns} />
       </ContentWithSidebar>
     </>
   );

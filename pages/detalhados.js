@@ -123,7 +123,7 @@ const Detalhados = () => {
 
   return (
     <>
-      <Header title="Comissários" />
+      <Header title="Detalhados" />
       <ContentWithSidebar>
         <HeaderTotal />
         {!loading && <Balance rows={orders} columns={columns} />}

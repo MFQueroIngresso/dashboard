@@ -11,27 +11,32 @@ const Detalhados = () => {
   const { event } = router.query;
 
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getOrders = async () => {
-    const { data } = await api.get("orders");
-    console.log(data);
-    const organizeData = data.map((order) => ({
-      id: order.order_id,
-      data_compra: new Date(order.date_added).toLocaleDateString("pt-BR"),
-      pdv: order.store_name,
-      pos: "",
-      pedido: order.invoice_no,
-      cod_barras: order.pagseguro_code,
-      situacao: "Aprovado",
-      ingresso: "",
-      ingresso_numerado: "",
-      valor: new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }).format(order.total),
-      forma_pagto: order.comment,
-    }));
-    setOrders(organizeData);
+    try {
+      const { data } = await api.get("orders");
+      const organizeData = data.map((order) => ({
+        id: order.order_id,
+        data_compra: new Date(order.date_added).toLocaleDateString("pt-BR"),
+        pdv: order.store_name,
+        pos: "",
+        pedido: order.invoice_no,
+        cod_barras: order.pagseguro_code,
+        situacao: "Aprovado",
+        ingresso: "",
+        ingresso_numerado: "",
+        valor: new Intl.NumberFormat("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        }).format(order.total),
+        forma_pagto: order.comment,
+      }));
+      setOrders(organizeData);
+    } catch (err) {
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -121,7 +126,21 @@ const Detalhados = () => {
       <Header title="Comissários" />
       <ContentWithSidebar>
         <HeaderTotal />
-        <Balance rows={orders} columns={columns} />
+        {!loading && <Balance rows={orders} columns={columns} />}
+        {loading && (
+          <>
+            <h1
+              style={{
+                color: "gray",
+                textAlign: "center",
+                textTransform: "uppercase",
+                letterSpacing: 3,
+              }}
+            >
+              Aguarde, carregando...
+            </h1>
+          </>
+        )}
       </ContentWithSidebar>
     </>
   );

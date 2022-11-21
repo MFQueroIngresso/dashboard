@@ -9,7 +9,7 @@ import { DemographicDataTable } from "./DemographicDataTable";
 export const DemographicData = () => {
   return (
     <>
-      <Card sx={{ minWidth: "100%" }}>
+      <Card sx={{ minWidth: "100%", boxShadow: "none" }}>
         <CardHeader
           sx={{ background: "#1976d2" }}
           subheader={

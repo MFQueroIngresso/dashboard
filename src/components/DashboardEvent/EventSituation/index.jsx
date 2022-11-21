@@ -10,7 +10,7 @@ import { CalendarToday } from "@mui/icons-material";
 export const EventSituation = () => {
   return (
     <>
-      <Card sx={{ minWidth: "100%", minHeight: "100%" }}>
+      <Card sx={{ minWidth: "100%", minHeight: "100%", boxShadow: "none" }}>
         <CardHeader
           sx={{ background: "#1976d2" }}
           subheader={
@@ -23,12 +23,43 @@ export const EventSituation = () => {
         />
 
         <CardContent>
-          <Typography variant="body2" sx={{ mt: 10, textAlign: "center" }}>
+          <Typography
+            variant="body2"
+            sx={{ mt: 1, mb: 3, textAlign: "center" }}
+          >
             Vendas iniciadas em 30 de Agosto de 2022 <br />
             <b>Iniciado há 46 dias</b>
           </Typography>
+          <Divider />
+          <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+            <Grid item xs={4} sx={{ pr: 1 }}>
+              <Typography
+                variant="body2"
+                color="info.main"
+                sx={{ fontWeight: "bold" }}
+              >
+                Ticket Médio
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="text.secondary">
+                <b>Quantidade</b>
+                <br />
+                <b>Valor</b>
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography variant="body2" color="success.main">
+                <b>
+                  10
+                  <br />
+                  R$ 233,00
+                </b>
+              </Typography>
+            </Grid>
+          </Grid>
         </CardContent>
-        <CardActions sx={{ mt: 12 }}>
+        <CardActions sx={{ mt: 2, mb: 3 }}>
           <Chip
             label="Faltam 12 dias para o evento"
             size="small"

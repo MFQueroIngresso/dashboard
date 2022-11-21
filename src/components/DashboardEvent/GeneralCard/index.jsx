@@ -16,7 +16,7 @@ export const GeneralCard = ({
 }) => {
   return (
     <>
-      <Card sx={{ minWidth: "100%", minHeight: "47.45%" }}>
+      <Card sx={{ minWidth: "100%", minHeight: "47.45%", boxShadow: "none" }}>
         <CardHeader
           sx={{ background: "#1976d2" }}
           subheader={

@@ -8,7 +8,7 @@ import { VisualizacaoGraficoDataChart } from "./VisualizacaoGraficoDataChart";
 export const VisualizacaoGrafico = () => {
   return (
     <>
-      <Card sx={{ minWidth: "100%" }}>
+      <Card sx={{ minWidth: "100%", boxShadow: "none" }}>
         <CardHeader
           sx={{ background: "#1976d2" }}
           subheader={

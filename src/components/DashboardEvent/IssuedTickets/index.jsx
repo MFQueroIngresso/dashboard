@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 export const IssuedTickets = () => {
   return (
     <>
-      <Card sx={{ minWidth: "100%" }}>
+      <Card sx={{ minWidth: "100%", boxShadow: "none" }}>
         <CardHeader
           sx={{ background: "#1976d2" }}
           subheader={
@@ -83,34 +83,6 @@ export const IssuedTickets = () => {
                   R$ 12.456,00
                   <br />
                   R$ 223,00
-                </b>
-              </Typography>
-            </Grid>
-          </Grid>
-          <Divider />
-          <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
-            <Grid item xs={4} sx={{ pr: 1 }}>
-              <Typography
-                variant="body2"
-                color="info.main"
-                sx={{ fontWeight: "bold" }}
-              >
-                Média Diária
-              </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography variant="body2" color="text.secondary">
-                <b>Quantidade</b>
-                <br />
-                <b>Valor</b>
-              </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography variant="body2" color="success.main">
-                <b>
-                  10
-                  <br />
-                  R$ 233,00
                 </b>
               </Typography>
             </Grid>

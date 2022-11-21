@@ -9,7 +9,7 @@ import { PaymentOrigemDataTable } from "./PaymentOrigemDataTable";
 export const PaymentOrigem = () => {
   return (
     <>
-      <Card sx={{ minWidth: "100%" }}>
+      <Card sx={{ minWidth: "100%", boxShadow: "none" }}>
         <CardHeader
           sx={{ background: "#1976d2" }}
           subheader={

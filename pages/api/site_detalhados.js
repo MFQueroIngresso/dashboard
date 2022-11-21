@@ -39,6 +39,7 @@ export default async function handler(req, res) {
             ticketsl_promo.tbl_classes_ingressos cat ON (cat.cla_cod = p.classId)
                 LEFT JOIN
             ${dbprefix}order_status os ON (os.order_status_id = o.order_status_id)
+        LIMIT 200
       `,
     });
     const lessResult = resultLoja.filter((i, idx) => idx < 200);

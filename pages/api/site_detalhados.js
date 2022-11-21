@@ -41,8 +41,6 @@ export default async function handler(req, res) {
             ${dbprefix}order_status os ON (os.order_status_id = o.order_status_id)
       `,
     });
-    console.log(resultLoja);
-
     const lessResult = resultLoja.filter((i, idx) => idx < 200);
     return res.status(200).json(lessResult);
   } catch (error) {

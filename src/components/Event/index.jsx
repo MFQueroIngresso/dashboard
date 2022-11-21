@@ -17,7 +17,14 @@ import Link from "next/link";
 export function Event() {
   return (
     <>
-      <Card sx={{ maxWidth: "100%", minWidth: 345, mt: 0, mb: 1 }}>
+      <Card
+        sx={{
+          maxWidth: "100%",
+          minWidth: 345,
+          mt: 0,
+          mb: 0,
+        }}
+      >
         <Link href="/slug-do-evento">
           <a>
             <Grid container>
@@ -41,7 +48,12 @@ export function Event() {
                     </>
                   }
                 />
-                <CardContent>
+                <CardContent
+                  style={{
+                    paddingBottom: 0,
+                    paddingTop: 0,
+                  }}
+                >
                   <Stack direction="row" spacing={1}>
                     <Chip
                       label="Faltam 12 dias para o evento"
@@ -59,8 +71,8 @@ export function Event() {
                 xs={3}
                 sx={{ borderRight: "1px solid rgba(0,0,0,.15)" }}
               >
-                <CardContent>
-                  <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+                <CardContent sx={{ pb: 0 }}>
+                  <Grid container spacing={1} sx={{ mt: 0, mb: 0 }}>
                     <Grid item xs={4} sx={{ pr: 1 }}>
                       <Typography
                         variant="body2"
@@ -100,7 +112,7 @@ export function Event() {
                 sx={{ borderRight: "1px solid rgba(0,0,0,.15)" }}
               >
                 <CardContent>
-                  <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+                  <Grid container spacing={1} sx={{ mt: 0, mb: 0 }}>
                     <Grid item xs={4} sx={{ pr: 1 }}>
                       <Typography
                         variant="body2"
@@ -142,7 +154,7 @@ export function Event() {
 
               <Grid item xs={3}>
                 <CardContent>
-                  <Grid container spacing={1} sx={{ mt: 1, mb: 2 }}>
+                  <Grid container spacing={1} sx={{ mt: 0, mb: 0 }}>
                     <Grid item xs={4} sx={{ pr: 1 }}>
                       <Typography
                         variant="body2"

@@ -1,9 +1,11 @@
-import excuteQuery from "../../src/libs/db";
+import { executeQueryBdPromo } from "../../src/libs/db";
 
 export default async function handler(req, res) {
   try {
-    const result = await excuteQuery({
-      query: "SELECT * FROM lltckt_order",
+    const result = await executeQueryBdPromo({
+      query: `
+        SELECT * FROM tbl_eventos
+      `,
     });
 
     const lessResult = result.filter((i, idx) => idx < 200);

@@ -2,7 +2,9 @@ import { Grid, Chip } from "@mui/material";
 import { CalendarToday } from "@mui/icons-material";
 
 export const HeaderTotal = () => {
-  const event = JSON.parse(window.localStorage.getItem("selected_event"));
+  const event =
+    typeof window !== "undefined" &&
+    JSON.parse(window.localStorage.getItem("selected_event"));
 
   return (
     <Grid container spacing={0} sx={{ mb: 3 }}>

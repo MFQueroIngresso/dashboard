@@ -32,7 +32,8 @@ export function Event({ event }) {
   };
 
   const handleClick = () => {
-    window.localStorage.setItem("selected_event", JSON.stringify(event));
+    typeof window !== "undefined" &&
+      window.localStorage.setItem("selected_event", JSON.stringify(event));
   };
 
   return (

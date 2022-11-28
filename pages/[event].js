@@ -8,12 +8,14 @@ import { HeaderTotal } from "../src/components/HeaderTotal";
 const EventPage = () => {
   const router = useRouter();
   const { event } = router.query;
+  // usar esse event, para dar um find na api de eventos
 
   return (
     <>
       <Header title="Dashboard" />
       <ContentWithSidebar>
         <HeaderTotal />
+        <pre>{JSON.stringify(event)}</pre>
         <DashboardEvent />
       </ContentWithSidebar>
     </>

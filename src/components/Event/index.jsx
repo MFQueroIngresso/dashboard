@@ -14,7 +14,8 @@ import Stack from "@mui/material/Stack";
 import { CalendarToday } from "@mui/icons-material";
 import Link from "next/link";
 
-export function Event() {
+export function Event({ event }) {
+  // nessa tela, precisa pegar o evento e ver informações das vendas
   return (
     <>
       <Card
@@ -25,7 +26,7 @@ export function Event() {
           mb: 0,
         }}
       >
-        <Link href="/slug-do-evento">
+        <Link href={`/${event.eve_cod}`}>
           <a>
             <Grid container>
               <Grid
@@ -39,12 +40,19 @@ export function Event() {
                       N
                     </Avatar>
                   }
-                  title="Nando Reis"
+                  title={event.eve_nome}
                   subheader={
                     <>
-                      19 de Agosto, 2022
+                      {new Date(event.eve_data).toLocaleString("pt-BR", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
                       <br />
-                      <small>Hillarius VP | São José dos Campos - SP</small>
+                      <small>
+                        {event.eve_local} | {event.eve_cidade}
+                      </small>
                     </>
                   }
                 />

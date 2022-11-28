@@ -16,8 +16,23 @@ import Link from "next/link";
 
 export function Event({ event }) {
   // nessa tela, precisa pegar o evento e ver informações das vendas
+  const one_day = 1000 * 60 * 60 * 24;
+  const presentDate = new Date();
+  const dateCompare = new Date(event.eve_data);
+
+  const showRemaingDays = () => {
+    if (presentDate.getMonth() == 11 && presentDate.getdate() > 25)
+      dateCompare.setFullYear(dateCompare.getFullYear() + 1);
+
+    const result =
+      Math.round(dateCompare.getTime() - presentDate.getTime()) / one_day;
+
+    const finalResult = result.toFixed(0);
+    return finalResult;
+  };
+
   return (
-    <>
+    <Grid key={event} item xs={12}>
       <Card
         sx={{
           maxWidth: "100%",
@@ -64,7 +79,7 @@ export function Event({ event }) {
                 >
                   <Stack direction="row" spacing={1}>
                     <Chip
-                      label="Faltam 12 dias para o evento"
+                      label={`Faltam ${showRemaingDays()} dias para o evento`}
                       size="small"
                       deleteIcon={<CalendarToday />}
                       onDelete={() => {}}
@@ -195,6 +210,6 @@ export function Event({ event }) {
           </a>
         </Link>
       </Card>
-    </>
+    </Grid>
   );
 }

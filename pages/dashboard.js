@@ -24,7 +24,6 @@ export default function DashboardPage() {
   useEffect(() => {
     getEvents();
   }, []);
-
   return (
     <>
       <Header />

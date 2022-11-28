@@ -6,6 +6,7 @@ export default async function handler(req, res) {
       query: `
         SELECT * FROM
           tbl_eventos eve
+        ORDER BY eve_data DESC;
       `,
     });
     /**

@@ -1,22 +1,14 @@
 import excuteQuery, { executeQueryBdPromo } from "../../src/libs/db";
 
+/**
+ * eve_cod é a identificação do evento na api de EVENTOS.
+ * uma listagem de ingressos, precisa saber de qual evento se refere.
+ * Então no resultado dessa api, precisa dizer se eve_cod(selecionado) === cla_evento, exibir o item.
+ */
+
 export default async function handler(req, res) {
   try {
-    const result = await executeQueryBdPromo({
-      query: `
-        SELECT 
-            eve.eve_cod AS codigo,
-            UPPER(eve.eve_nome) AS evento,
-            eve.eve_data DataEvento,
-            eve.eve_local LocalEvento,
-            eve.eve_cidade CidadeEvento
-        FROM
-            tbl_eventos eve
-      `,
-    });
-
     const dbprefix = "lltckt_";
-
     const resultLoja = await excuteQuery({
       query: `
         SELECT * FROM

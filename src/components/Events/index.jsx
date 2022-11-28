@@ -9,27 +9,6 @@ export default function Events() {
         <Grid item xs={12}>
           <Event />
         </Grid>
-        <Grid item xs={12}>
-          <Event />
-        </Grid>
-        <Grid item xs={12}>
-          <Event />
-        </Grid>
-        <Grid item xs={12}>
-          <Event />
-        </Grid>
-        <Grid item xs={12}>
-          <Event />
-        </Grid>
-        <Grid item xs={12}>
-          <Event />
-        </Grid>
-        <Grid item xs={12}>
-          <Event />
-        </Grid>
-        <Grid item xs={12}>
-          <Event />
-        </Grid>
       </Grid>
       <br />
       <br />

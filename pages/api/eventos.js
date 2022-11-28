@@ -15,7 +15,7 @@ export default async function handler(req, res) {
      * Porque daí é só conectar isso com LOGIN.
      */
     const lessResult = result.filter((i, idx) => idx <= 200);
-    return res.status(200).json(lessResult);
+    return res.status(200).json(result);
   } catch (error) {
     return res.status(200).json({ erro: true });
   }

@@ -15,7 +15,6 @@ const EventPage = () => {
       <Header title="Dashboard" />
       <ContentWithSidebar>
         <HeaderTotal />
-        <pre>{JSON.stringify(event)}</pre>
         <DashboardEvent />
       </ContentWithSidebar>
     </>

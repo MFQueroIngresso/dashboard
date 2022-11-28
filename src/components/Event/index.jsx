@@ -11,7 +11,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import { CalendarToday } from "@mui/icons-material";
+import { CalendarToday, Info } from "@mui/icons-material";
 import Link from "next/link";
 
 export function Event({ event }) {
@@ -31,8 +31,12 @@ export function Event({ event }) {
     return finalResult;
   };
 
+  const handleClick = () => {
+    window.localStorage.setItem("selected_event", JSON.stringify(event));
+  };
+
   return (
-    <Grid key={event} item xs={12}>
+    <Grid key={event} item xs={12} onClick={handleClick}>
       <Card
         sx={{
           maxWidth: "100%",
@@ -79,11 +83,18 @@ export function Event({ event }) {
                 >
                   <Stack direction="row" spacing={1}>
                     <Chip
-                      label={`Faltam ${showRemaingDays()} dias para o evento`}
+                      label={
+                        showRemaingDays() < 0
+                          ? "Evento Encerrado"
+                          : `Faltam ${showRemaingDays()} dias para o evento`
+                      }
                       size="small"
-                      deleteIcon={<CalendarToday />}
+                      deleteIcon={
+                        showRemaingDays() < 0 ? <Info /> : <CalendarToday />
+                      }
                       onDelete={() => {}}
                       sx={{ pr: 1, pl: 1 }}
+                      color={showRemaingDays() < 0 ? "error" : "default"}
                     />
                   </Stack>
                 </CardContent>

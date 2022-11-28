@@ -2,19 +2,21 @@ import { Grid, Chip } from "@mui/material";
 import { CalendarToday } from "@mui/icons-material";
 
 export const HeaderTotal = () => {
+  const event = JSON.parse(window.localStorage.getItem("selected_event"));
+
   return (
     <Grid container spacing={0} sx={{ mb: 3 }}>
       <Grid item xs={12} sm={12} md={9} lg={9}>
         <h2
           style={{ color: "rgba(0,0,0,.6)", marginTop: 0, marginBottom: "3px" }}
         >
-          Relatório Geral <small> · Nando Reis</small>
+          Relatório Geral <small> · {event?.eve_nome}</small>
         </h2>
         <hr style={{ opacity: "0.2" }} />
         <p
           style={{ color: "rgba(0,0,0,.6)", marginTop: 0, marginBottom: "3px" }}
         >
-          Hillarius VP · São José dos Campos - SP
+          {event?.eve_local} · {event?.eve_cidade}
         </p>
       </Grid>
       <Grid item xs={12} sm={12} md={3} lg={3} sx={{ textAlign: "right" }}>

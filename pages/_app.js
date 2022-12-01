@@ -13,22 +13,12 @@ export default function App({ Component, pageProps }) {
         <meta name="description" content="Lorem Ipsum..." />
         <title>Example</title>
       </Head>
-      {
-        //
-        // Can be placed anywhere in the return statement
-        //
-      }
       <NextProgress
         delay={300}
         options={{ showSpinner: true }}
         color="rgb(5, 30, 52)"
         height="4px"
       />
-      {
-        //
-        //
-        //
-      }
       <>
         <Component {...pageProps} />
       </>

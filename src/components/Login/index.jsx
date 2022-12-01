@@ -9,7 +9,6 @@ import Checkbox from "@mui/material/Checkbox";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Link from "next/link";
@@ -79,17 +78,11 @@ export function Login() {
               alignItems: "center",
             }}
           >
-            {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
-            </Avatar> */}
             <img
               src="logo.png"
               alt="Logotipo"
               style={{ width: 200, height: "auto" }}
             />
-            {/* <Typography component="h1" variant="h5">
-              Login
-            </Typography> */}
             <Box
               component="form"
               noValidate

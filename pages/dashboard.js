@@ -13,7 +13,6 @@ export default function DashboardPage() {
   const getEvents = async () => {
     try {
       const { data } = await api.get("eventos");
-      console.log("getEvents", data);
       setEvents(data);
     } catch (err) {
     } finally {

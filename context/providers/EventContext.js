@@ -40,7 +40,7 @@ export const EventContextProvider = ({ children }) => {
 
   const handleAllEvents = () => {
     setLoading(true);
-    setTimeout(() => setEvents(allEvents), 400);
+    setTimeout(() => setEvents(allEvents), 350);
     setTimeout(() => setLoading(false), 400);
   };
 

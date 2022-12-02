@@ -10,11 +10,17 @@ import Grid from "@mui/material/Grid";
 import { useEventContext } from "../../../context/providers/EventContext";
 
 export function Filter() {
-  const [filter, setFilter] = useState("");
-  const { loading } = useEventContext();
+  const [filter, setFilter] = useState(2);
+  const { handleAllEvents, handleCurrentEvents } = useEventContext();
 
   const handleChange = (event) => {
     setFilter(event.target.value);
+    if (event.target.value === 1) {
+      handleAllEvents();
+    }
+    if (event.target.value === 2) {
+      handleCurrentEvents();
+    }
   };
 
   return (
@@ -30,9 +36,9 @@ export function Filter() {
               label="Filtrar"
               onChange={handleChange}
             >
-              <MenuItem value={10}>Todos os Eventos</MenuItem>
-              <MenuItem value={20}>Eventos Atuais</MenuItem>
-              <MenuItem value={30}>Eventos Encerrados</MenuItem>
+              <MenuItem value={1}>Todos os Eventos</MenuItem>
+              <MenuItem value={2}>Eventos Atuais</MenuItem>
+              <MenuItem value={3}>Eventos Encerrados</MenuItem>
             </Select>
           </FormControl>
         </Box>

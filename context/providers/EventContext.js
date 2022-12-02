@@ -1,13 +1,29 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import { api } from "../../src/libs/api";
 
 const EventContext = createContext();
 export default EventContext;
 
 export const ContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState("opa");
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getEvents = async () => {
+    try {
+      const { data } = await api.get("eventos");
+      setEvents(data);
+    } catch (err) {
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, []);
 
   return (
-    <EventContext.Provider value={{ theme, setTheme }}>
+    <EventContext.Provider value={{ events, loading }}>
       {children}
     </EventContext.Provider>
   );

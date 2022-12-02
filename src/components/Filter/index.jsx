@@ -11,7 +11,7 @@ import { useEventContext } from "../../../context/providers/EventContext";
 
 export function Filter() {
   const [filter, setFilter] = useState("");
-  const { theme } = useEventContext();
+  const { loading } = useEventContext();
 
   const handleChange = (event) => {
     setFilter(event.target.value);
@@ -22,7 +22,6 @@ export function Filter() {
       <Grid item xs={12} sm={6} md={8} lg={3}>
         <Box sx={{ minWidth: "100%" }}>
           <FormControl fullWidth>
-            <pre>{JSON.stringify(theme)}</pre>
             <InputLabel id="demo-simple-select-label">Filtrar</InputLabel>
             <Select
               labelId="demo-simple-select-label"

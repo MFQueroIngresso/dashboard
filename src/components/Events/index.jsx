@@ -8,15 +8,19 @@ export default function Events({ events }) {
   const [eventsSort, setEventsSort] = useState([]);
 
   const one_day = 1000 * 60 * 60 * 24;
-  const presentDate = new Date();
+  const presentDate = Date.now();
 
   const showRemaingDays = (date) => {
     const dateCompare = new Date(date);
-    if (presentDate.getMonth() == 11 && presentDate.getdate() > 25)
+    if (
+      new Date(presentDate).getMonth() == 11 &&
+      new Date(presentDate).getDate() > 25
+    )
       dateCompare.setFullYear(dateCompare.getFullYear() + 1);
 
     const result =
-      Math.round(dateCompare.getTime() - presentDate.getTime()) / one_day;
+      Math.round(dateCompare.getTime() - new Date(presentDate).getTime()) /
+      one_day;
 
     const finalResult = result.toFixed(0);
     return finalResult;

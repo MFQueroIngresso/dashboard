@@ -17,15 +17,20 @@ import Link from "next/link";
 export function Event({ event }) {
   // nessa tela, precisa pegar o evento e ver informações das vendas
   const one_day = 1000 * 60 * 60 * 24;
-  const presentDate = new Date();
+  const presentDate = Date.now();
   const dateCompare = new Date(event.eve_data);
 
   const showRemaingDays = () => {
-    if (presentDate.getMonth() == 11 && presentDate.getdate() > 25)
+    if (
+      new Date(presentDate).getMonth() == 11 &&
+      new Date(presentDate).getDate() > 25
+    ) {
       dateCompare.setFullYear(dateCompare.getFullYear() + 1);
+    }
 
     const result =
-      Math.round(dateCompare.getTime() - presentDate.getTime()) / one_day;
+      Math.round(dateCompare.getTime() - new Date(presentDate).getTime()) /
+      one_day;
 
     const finalResult = result.toFixed(0);
     return finalResult;

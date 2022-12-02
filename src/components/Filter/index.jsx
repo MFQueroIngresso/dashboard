@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useContext, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
@@ -7,9 +7,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid";
+import AppContext from "../../../context/AppContext";
 
 export function Filter() {
-  const [filter, setFilter] = React.useState("");
+  const [filter, setFilter] = useState("");
+  const { theme } = useContext(AppContext);
 
   const handleChange = (event) => {
     setFilter(event.target.value);
@@ -20,6 +22,7 @@ export function Filter() {
       <Grid item xs={12} sm={6} md={8} lg={3}>
         <Box sx={{ minWidth: "100%" }}>
           <FormControl fullWidth>
+            <pre>{JSON.stringify(theme)}</pre>
             <InputLabel id="demo-simple-select-label">Filtrar</InputLabel>
             <Select
               labelId="demo-simple-select-label"

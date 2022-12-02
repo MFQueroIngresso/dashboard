@@ -2,10 +2,11 @@ import "../styles/globals.css";
 
 import Head from "next/head";
 import NextProgress from "next-progress";
+import { ContextProvider } from "../context/AppContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <ContextProvider>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +23,6 @@ export default function App({ Component, pageProps }) {
       <>
         <Component {...pageProps} />
       </>
-    </>
+    </ContextProvider>
   );
 }

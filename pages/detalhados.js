@@ -5,6 +5,7 @@ import { ContentWithSidebar } from "../src/components/ContentWithSidebar";
 import { HeaderTotal } from "../src/components/HeaderTotal";
 import { api } from "../src/libs/api";
 import { useEffect, useState } from "react";
+import { Loading } from "../src/components/Loading";
 
 const Detalhados = () => {
   const router = useRouter();
@@ -127,20 +128,7 @@ const Detalhados = () => {
       <ContentWithSidebar>
         <HeaderTotal />
         {!loading && <Balance rows={orders} columns={columns} />}
-        {loading && (
-          <>
-            <h1
-              style={{
-                color: "gray",
-                textAlign: "center",
-                textTransform: "uppercase",
-                letterSpacing: 3,
-              }}
-            >
-              Aguarde, carregando...
-            </h1>
-          </>
-        )}
+        {loading && <Loading />}
       </ContentWithSidebar>
     </>
   );

@@ -3,6 +3,7 @@ import Events from "../src/components/Events";
 import { Filter } from "../src/components/Filter";
 import { Header } from "../src/components/Header";
 import { useEventContext } from "../context/providers/EventContext";
+import { Loading } from "../src/components/Loading";
 
 export default function DashboardPage() {
   const { events, loading } = useEventContext();
@@ -14,20 +15,7 @@ export default function DashboardPage() {
       </Container>
       <Container maxWidth="xl">
         {!loading && <Events events={events} />}
-        {loading && (
-          <>
-            <h1
-              style={{
-                color: "gray",
-                textAlign: "center",
-                textTransform: "uppercase",
-                letterSpacing: 3,
-              }}
-            >
-              Aguarde, carregando...
-            </h1>
-          </>
-        )}
+        {loading && <Loading />}
       </Container>
     </>
   );

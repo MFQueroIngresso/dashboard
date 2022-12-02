@@ -7,11 +7,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid";
-import AppContext from "../../../context/AppContext";
+import { useAppContext } from "../../../context/AppContext";
 
 export function Filter() {
   const [filter, setFilter] = useState("");
-  const { theme } = useContext(AppContext);
+  const { theme } = useAppContext();
 
   const handleChange = (event) => {
     setFilter(event.target.value);

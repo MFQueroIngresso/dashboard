@@ -4,7 +4,6 @@ import { Event } from "../Event";
 import { useState, useEffect } from "react";
 
 export default function Events({ events }) {
-  // events com data mais próxima no topo
   const [eventsSort, setEventsSort] = useState([]);
 
   const one_day = 1000 * 60 * 60 * 24;

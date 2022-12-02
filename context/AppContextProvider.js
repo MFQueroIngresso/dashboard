@@ -1,6 +1,6 @@
 import React from "react";
-import { EventContext } from "./providers/EventContext";
+import { EventContextProvider } from "./providers/EventContext";
 import { combineComponents } from "./helpers/combineComponents";
 
-const providers = [EventContext];
+const providers = [EventContextProvider];
 export const AppContextProvider = combineComponents(...providers);

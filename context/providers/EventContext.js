@@ -4,7 +4,7 @@ import { api } from "../../src/libs/api";
 const EventContext = createContext();
 export default EventContext;
 
-export const ContextProvider = ({ children }) => {
+export const EventContextProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,7 +14,7 @@ export const ContextProvider = ({ children }) => {
       setEvents(data);
     } catch (err) {
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   };
 

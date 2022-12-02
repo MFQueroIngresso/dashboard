@@ -2,7 +2,7 @@ import "../styles/globals.css";
 
 import Head from "next/head";
 import NextProgress from "next-progress";
-import { ContextProvider } from "../context/AppContext";
+import { ContextProvider } from "../context/providers/EventContext";
 
 export default function App({ Component, pageProps }) {
   return (

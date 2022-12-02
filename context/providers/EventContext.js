@@ -14,7 +14,7 @@ export const ContextProvider = ({ children }) => {
       setEvents(data);
     } catch (err) {
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 

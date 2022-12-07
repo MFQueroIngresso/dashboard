@@ -58,13 +58,28 @@ export const EventContextProvider = ({ children }) => {
     setLoading(false);
   };
 
+  const handlePastEvents = () => {
+    setLoading(true);
+    const pastEvents = allEvents.filter(
+      (event) => showRemaingDays(event.eve_data) < 0
+    );
+    setTimeout(() => setEvents(pastEvents), 350);
+    setTimeout(() => setLoading(false), 400);
+  };
+
   useEffect(() => {
     getEvents();
   }, []);
 
   return (
     <EventContext.Provider
-      value={{ events, loading, handleAllEvents, handleCurrentEvents }}
+      value={{
+        events,
+        loading,
+        handleAllEvents,
+        handleCurrentEvents,
+        handlePastEvents,
+      }}
     >
       {children}
     </EventContext.Provider>

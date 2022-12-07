@@ -11,7 +11,8 @@ import { useEventContext } from "../../../context/providers/EventContext";
 
 export function Filter() {
   const [filter, setFilter] = useState(2);
-  const { handleAllEvents, handleCurrentEvents } = useEventContext();
+  const { handleAllEvents, handleCurrentEvents, handlePastEvents } =
+    useEventContext();
 
   const handleChange = (event) => {
     setFilter(event.target.value);
@@ -20,6 +21,9 @@ export function Filter() {
     }
     if (event.target.value === 2) {
       handleCurrentEvents();
+    }
+    if (event.target.value === 3) {
+      handlePastEvents();
     }
   };
 

@@ -45,6 +45,28 @@ export function EventList({ events }) {
     setPage(0);
   };
 
+  // nessa tela, precisa pegar o evento e ver informações das vendas
+
+  const showRemaingDays = (event) => {
+    const one_day = 1000 * 60 * 60 * 24;
+    const presentDate = Date.now();
+    const dateCompare = new Date(event.eve_data);
+
+    if (
+      new Date(presentDate).getMonth() == 11 &&
+      new Date(presentDate).getDate() > 25
+    ) {
+      dateCompare.setFullYear(dateCompare.getFullYear() + 1);
+    }
+
+    const result =
+      Math.round(dateCompare.getTime() - new Date(presentDate).getTime()) /
+      one_day;
+
+    const finalResult = result.toFixed(0);
+    return finalResult;
+  };
+
   return (
     <Paper sx={{ width: "100%" }}>
       <TableContainer sx={{ maxHeight: 540 }}>
@@ -77,29 +99,43 @@ export function EventList({ events }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {events.map(() => {
+            {events.map((event) => {
               return (
                 <>
                   <TableRow>
                     <TableCell>
                       <div>
-                        <strong>HUNGRIA E TURMA DO PAGODE</strong>
+                        <strong>{event.eve_nome}</strong>
                       </div>
-                      <small>Rancho Santa Fé </small>
-                      <span>-</span>
-                      <small>Mogi das Cruzes - SP </small>
+                      <small>{event.eve_local}</small>
+                      <span>&nbsp; | &nbsp;</span>
+                      <small>{event.eve_cidade}</small>
                     </TableCell>
                     <TableCell>
                       <span>
-                        <strong>06/01/2023</strong>
+                        <strong>
+                          {new Date(event.eve_data).toLocaleString("pt-BR", {
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric",
+                          })}
+                        </strong>
                       </span>
                       <br />
                       <Typography
                         variant="strong"
                         component="strong"
-                        color="primary.main"
+                        color={
+                          showRemaingDays(event) < 0
+                            ? "secondary.main"
+                            : "primary.main"
+                        }
                       >
-                        Faltam 30 dias
+                        {showRemaingDays(event) < 0
+                          ? "Evento Encerrado"
+                          : `Faltam ${showRemaingDays(
+                              event
+                            )} dias para o evento`}
                       </Typography>
                     </TableCell>
                     <TableCell>8</TableCell>

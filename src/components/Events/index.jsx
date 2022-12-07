@@ -8,13 +8,6 @@ export default function Events({ events }) {
     <div style={{ width: "100%" }}>
       <Grid container spacing={1} sx={{ mt: 2 }}>
         <EventList events={events} />
-        {/* {events.map((event) => {
-          return (
-            <>
-              <Event event={event} />
-            </>
-          );
-        })} */}
       </Grid>
       <br />
       <br />

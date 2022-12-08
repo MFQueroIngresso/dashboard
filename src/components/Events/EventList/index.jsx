@@ -158,7 +158,11 @@ export function EventList({ events }) {
               .map((event) => {
                 return (
                   <>
-                    <TableRow key={event} onClick={() => handleClick(event)}>
+                    <TableRow
+                      key={event}
+                      onClick={() => handleClick(event)}
+                      sx={{ cursor: "pointer" }}
+                    >
                       <TableCell>
                         <div>
                           <strong>{event.eve_nome}</strong>

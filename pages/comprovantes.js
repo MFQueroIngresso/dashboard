@@ -44,7 +44,17 @@ const SangriasComprovantes = () => {
       field: "cadastrado_em",
       headerName: "Data do Cadastro",
       type: "number",
-      width: 200,
+      renderCell: (param) => {
+        return (
+          <>
+            {new Date(param.row.cadastrado_em).toLocaleString("pt-BR", {
+              year: "numeric",
+              month: "numeric",
+              day: "numeric",
+            })}
+          </>
+        );
+      },
     },
     {
       field: "valor",

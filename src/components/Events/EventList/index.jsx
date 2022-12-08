@@ -155,76 +155,74 @@ export function EventList({ events }) {
           <TableBody>
             {events
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((event) => {
+              .map((event, idx) => {
                 return (
-                  <>
-                    <TableRow
-                      key={event}
-                      onClick={() => handleClick(event)}
-                      sx={{ cursor: "pointer" }}
-                    >
-                      <TableCell>
-                        <div>
-                          <strong>{event.eve_nome}</strong>
-                        </div>
-                        <small>{event.eve_local}</small>
-                        <span>&nbsp; | &nbsp;</span>
-                        <small>{event.eve_cidade}</small>
-                      </TableCell>
-                      <TableCell>
-                        <span>
-                          <strong>
-                            {new Date(event.eve_data).toLocaleString("pt-BR", {
-                              year: "numeric",
-                              month: "numeric",
-                              day: "numeric",
-                            })}
-                          </strong>
-                        </span>
-                        <br />
+                  <TableRow
+                    key={idx}
+                    onClick={() => handleClick(event)}
+                    sx={{ cursor: "pointer" }}
+                  >
+                    <TableCell>
+                      <div>
+                        <strong>{event.eve_nome}</strong>
+                      </div>
+                      <small>{event.eve_local}</small>
+                      <span>&nbsp; | &nbsp;</span>
+                      <small>{event.eve_cidade}</small>
+                    </TableCell>
+                    <TableCell>
+                      <span>
+                        <strong>
+                          {new Date(event.eve_data).toLocaleString("pt-BR", {
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric",
+                          })}
+                        </strong>
+                      </span>
+                      <br />
+                      <Typography
+                        variant="strong"
+                        component="strong"
+                        color={
+                          showRemaingDays(event) < 0
+                            ? "secondary.main"
+                            : "primary.main"
+                        }
+                      >
+                        {showRemaingDays(event) < 0
+                          ? "Evento Encerrado"
+                          : `Faltam ${showRemaingDays(
+                              event
+                            )} dias para o evento`}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>8</TableCell>
+                    <TableCell>
+                      <strong>
                         <Typography
-                          variant="strong"
-                          component="strong"
-                          color={
-                            showRemaingDays(event) < 0
-                              ? "secondary.main"
-                              : "primary.main"
-                          }
+                          variant="span"
+                          component="span"
+                          color="success.main"
                         >
-                          {showRemaingDays(event) < 0
-                            ? "Evento Encerrado"
-                            : `Faltam ${showRemaingDays(
-                                event
-                              )} dias para o evento`}
+                          R$ 480,00
                         </Typography>
-                      </TableCell>
-                      <TableCell>8</TableCell>
-                      <TableCell>
-                        <strong>
-                          <Typography
-                            variant="span"
-                            component="span"
-                            color="success.main"
-                          >
-                            R$ 480,00
-                          </Typography>
-                        </strong>
-                      </TableCell>
-                      <TableCell>0</TableCell>
-                      <TableCell>243 </TableCell>
-                      <TableCell>
-                        <strong>
-                          <Typography
-                            variant="span"
-                            component="span"
-                            color="success.main"
-                          >
-                            R$ 17.060,00
-                          </Typography>
-                        </strong>
-                      </TableCell>
-                    </TableRow>
-                  </>
+                      </strong>
+                    </TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>243 </TableCell>
+                    <TableCell>
+                      <strong>
+                        <Typography
+                          variant="span"
+                          component="span"
+                          color="success.main"
+                        >
+                          R$ 17.060,00
+                        </Typography>
+                      </strong>
+                    </TableCell>
+                  </TableRow>
                 );
               })}
           </TableBody>

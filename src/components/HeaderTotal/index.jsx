@@ -6,6 +6,8 @@ export const HeaderTotal = () => {
     typeof window !== "undefined" &&
     JSON.parse(window.localStorage.getItem("selected_event"));
 
+  if (!event) return null;
+
   return (
     <Grid container spacing={0} sx={{ mb: 3 }}>
       <Grid item xs={12} sm={12} md={9} lg={9}>

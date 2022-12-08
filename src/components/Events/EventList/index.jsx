@@ -52,27 +52,95 @@ export function EventList({ events }) {
             <TableRow>
               <TableCell rowSpan={2}>
                 <a href="https://promo.queroingresso.com.br/index.php/home?date=atual&amp;order=name&amp;sort=asc">
-                  Nome
+                  <Typography
+                    variant="strong"
+                    component="strong"
+                    color="primary.main"
+                  >
+                    Nome
+                  </Typography>
                 </a>
               </TableCell>
               <TableCell rowSpan={2}>
                 <a href="https://promo.queroingresso.com.br/index.php/home?date=atual&amp;order=data_evento&amp;sort=asc">
-                  Data do Evento
+                  <Typography
+                    variant="strong"
+                    component="strong"
+                    color="primary.main"
+                  >
+                    Data do Evento
+                  </Typography>
                 </a>
               </TableCell>
               <TableCell colSpan={2}>
-                <span>Hoje</span>
+                <span>
+                  <Typography
+                    variant="strong"
+                    component="strong"
+                    color="primary.main"
+                  >
+                    Hoje
+                  </Typography>
+                </span>
               </TableCell>
               <TableCell colSpan={4}>
-                <span>Total</span>
+                <span>
+                  <Typography
+                    variant="strong"
+                    component="strong"
+                    color="primary.main"
+                  >
+                    Total
+                  </Typography>
+                </span>
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Vendidos</TableCell>
-              <TableCell>Receita</TableCell>
-              <TableCell>Cortesias</TableCell>
-              <TableCell>Vendidos</TableCell>
-              <TableCell>Receita</TableCell>
+              <TableCell>
+                <Typography
+                  variant="strong"
+                  component="strong"
+                  color="text.secondary"
+                >
+                  Vendidos
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography
+                  variant="strong"
+                  component="strong"
+                  color="text.secondary"
+                >
+                  Receita
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography
+                  variant="strong"
+                  component="strong"
+                  color="text.secondary"
+                >
+                  Cortesias
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography
+                  variant="strong"
+                  component="strong"
+                  color="text.secondary"
+                >
+                  Vendidos
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography
+                  variant="strong"
+                  component="strong"
+                  color="text.secondary"
+                >
+                  Receita
+                </Typography>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

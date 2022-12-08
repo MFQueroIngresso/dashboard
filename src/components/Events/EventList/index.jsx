@@ -8,10 +8,13 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { Typography } from "@mui/material";
+import { useRouter } from "next/router";
 
 export function EventList({ events }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const router = useRouter();
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -42,6 +45,12 @@ export function EventList({ events }) {
 
     const finalResult = result.toFixed(0);
     return finalResult;
+  };
+
+  const handleClick = (event) => {
+    typeof window !== "undefined" &&
+      window.localStorage.setItem("selected_event", JSON.stringify(event));
+    router.push(`/${event.eve_cod}`);
   };
 
   return (
@@ -149,7 +158,7 @@ export function EventList({ events }) {
               .map((event) => {
                 return (
                   <>
-                    <TableRow key={event}>
+                    <TableRow key={event} onClick={() => handleClick(event)}>
                       <TableCell>
                         <div>
                           <strong>{event.eve_nome}</strong>

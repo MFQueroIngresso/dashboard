@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   try {
     const result = await executeQueryBdPromo({
       query: `
-          SELECT * FROM tbl_comprovante_sangria eve
+          SELECT * FROM tbl_comprovante_sangria
         `,
     });
     return res.status(200).json(result);

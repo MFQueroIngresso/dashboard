@@ -67,8 +67,16 @@ export const EventContextProvider = ({ children }) => {
     setTimeout(() => setLoading(false), 400);
   };
 
-  const handleSearchEvents = () => {
+  const handleSearchEvents = (value) => {
+    if (value.length === 0) {
+      handleCurrentEvents();
+      return;
+    }
     const currentEvents = events;
+    const filteredData = currentEvents.filter((el) =>
+      el.eve_nome.toLowerCase().includes(value?.toLowerCase())
+    );
+    setEvents(filteredData);
   };
 
   useEffect(() => {

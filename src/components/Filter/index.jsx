@@ -35,8 +35,8 @@ export function Filter() {
 
   const handleSearchChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setSearch(e.target.value);
+    handleSearchEvents(e.target.value);
   };
 
   return (

@@ -67,6 +67,10 @@ export const EventContextProvider = ({ children }) => {
     setTimeout(() => setLoading(false), 400);
   };
 
+  const handleSearchEvents = () => {
+    const currentEvents = events;
+  };
+
   useEffect(() => {
     getEvents();
   }, []);
@@ -79,6 +83,7 @@ export const EventContextProvider = ({ children }) => {
         handleAllEvents,
         handleCurrentEvents,
         handlePastEvents,
+        handleSearchEvents,
       }}
     >
       {children}

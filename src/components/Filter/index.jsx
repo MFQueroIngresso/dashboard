@@ -11,8 +11,14 @@ import { useEventContext } from "../../../context/providers/EventContext";
 
 export function Filter() {
   const [filter, setFilter] = useState(2);
-  const { handleAllEvents, handleCurrentEvents, handlePastEvents } =
-    useEventContext();
+  const [search, setSearch] = useState("");
+
+  const {
+    handleAllEvents,
+    handleCurrentEvents,
+    handlePastEvents,
+    handleSearchEvents,
+  } = useEventContext();
 
   const handleChange = (event) => {
     setFilter(event.target.value);
@@ -25,6 +31,12 @@ export function Filter() {
     if (event.target.value === 3) {
       handlePastEvents();
     }
+  };
+
+  const handleSearchChange = (e) => {
+    e.preventDefault();
+    console.log(e.target.value);
+    setSearch(e.target.value);
   };
 
   return (
@@ -48,27 +60,13 @@ export function Filter() {
         </Box>
       </Grid>
       <Grid item xs={12} sm={6} md={8} lg={9}>
-        <Autocomplete
-          disablePortal
-          id="combo-box-demo"
-          options={top100Films}
-          sx={{ width: "100%" }}
-          renderInput={(params) => (
-            <TextField {...params} label="Encontrar Evento" />
-          )}
+        <TextField
+          sx={{ minWidth: "100%" }}
+          label="Encontrar Evento"
+          value={search}
+          onChange={handleSearchChange}
         />
       </Grid>
     </Grid>
   );
 }
-
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const top100Films = [
-  { label: "Festa do Peão de Barretos", year: 2022 },
-  { label: "Niver da Pri", year: 2022 },
-  { label: "Expo Perdões", year: 2022 },
-  { label: "Turnê de Despedida do Skank", year: 2022 },
-  { label: "Festa do Beijo", year: 2022 },
-  { label: "Nando Reis", year: 2022 },
-  { label: "Isso é São Paulo", year: 2022 },
-];

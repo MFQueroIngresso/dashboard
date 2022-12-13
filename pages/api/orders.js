@@ -1,8 +1,8 @@
-import excuteQuery from "../../src/libs/db";
+import executeQuery from "../../src/libs/db";
 
 export default async function handler(req, res) {
   try {
-    const result = await excuteQuery({
+    const result = await executeQuery({
       query: "SELECT * FROM lltckt_order",
     });
 

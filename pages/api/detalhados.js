@@ -1,10 +1,4 @@
-import excuteQuery, { executeQueryBdAll } from "../../src/libs/db";
-
-/**
- * eve_cod é a identificação do evento na api de EVENTOS.
- * uma listagem de ingressos, precisa saber de qual evento se refere.
- * Então no resultado dessa api, precisa dizer se eve_cod(selecionado) === cla_evento, exibir o item.
- */
+import executeQuery, { executeQueryBdAll } from "../../src/libs/db";
 
 export default async function handler(req, res) {
   try {

@@ -1,4 +1,4 @@
-import excuteQuery, { executeQueryBdPromo } from "../../src/libs/db";
+import executeQuery, { executeQueryBdPromo } from "../../src/libs/db";
 
 /**
  * eve_cod é a identificação do evento na api de EVENTOS.
@@ -9,7 +9,7 @@ import excuteQuery, { executeQueryBdPromo } from "../../src/libs/db";
 export default async function handler(req, res) {
   try {
     const dbprefix = "lltckt_";
-    const resultLoja = await excuteQuery({
+    const resultLoja = await executeQuery({
       query: `
         SELECT * FROM
             ${dbprefix}order o

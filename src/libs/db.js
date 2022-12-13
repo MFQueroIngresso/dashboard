@@ -39,3 +39,22 @@ export async function executeQueryBdPromo({ query, values }) {
     return { error };
   }
 }
+
+const db_all = mysql({
+  config: {
+    host: "dbhmlrestqueroingressos.cbx85spjjr5c.us-east-1.rds.amazonaws.com",
+    port: "3306",
+    user: "admin",
+    password: "PAAIO21Ca&a2",
+  },
+});
+
+export async function executeQueryBdAll({ query, values }) {
+  try {
+    const results = await db_all.query(query, values);
+    await db.end();
+    return results;
+  } catch (error) {
+    return { error };
+  }
+}

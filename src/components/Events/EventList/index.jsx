@@ -197,7 +197,27 @@ export function EventList({ events }) {
                             )} dias para o evento`}
                       </Typography>
                     </TableCell>
-                    <TableCell>8</TableCell>
+                    <TableCell>
+                      {
+                        event.ingressos.filter((ing) => {
+                          return (
+                            new Date(ing.ing_data_compra).toLocaleString(
+                              "pt-BR",
+                              {
+                                year: "numeric",
+                                month: "numeric",
+                                day: "numeric",
+                              }
+                            ) ===
+                            new Date().toLocaleString("pt-br", {
+                              year: "numeric",
+                              month: "numeric",
+                              day: "numeric",
+                            })
+                          );
+                        }).length
+                      }
+                    </TableCell>
                     <TableCell>
                       <strong>
                         <Typography
@@ -206,11 +226,32 @@ export function EventList({ events }) {
                           color="success.main"
                         >
                           R$ 480,00
+                          {event.ingressos
+                            .filter((ing) => {
+                              return (
+                                new Date(ing.ing_data_compra).toLocaleString(
+                                  "pt-BR",
+                                  {
+                                    year: "numeric",
+                                    month: "numeric",
+                                    day: "numeric",
+                                  }
+                                ) ===
+                                new Date().toLocaleString("pt-br", {
+                                  year: "numeric",
+                                  month: "numeric",
+                                  day: "numeric",
+                                })
+                              );
+                            })
+                            .map((i) => {
+                              return <>{i.ing_valor}ss</>;
+                            })}
                         </Typography>
                       </strong>
                     </TableCell>
                     <TableCell>0</TableCell>
-                    <TableCell>243 </TableCell>
+                    <TableCell>{event.ingressos.length}</TableCell>
                     <TableCell>
                       <strong>
                         <Typography
@@ -219,6 +260,7 @@ export function EventList({ events }) {
                           color="success.main"
                         >
                           R$ 17.060,00
+                          {event.ingressos.map}
                         </Typography>
                       </strong>
                     </TableCell>

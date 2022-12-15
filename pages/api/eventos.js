@@ -7,6 +7,7 @@ export default async function handler(req, res) {
         SELECT 
           eve_cod, eve_nome, eve_local, eve_cidade, eve_data, eve_cliente
         FROM ticketsl_promo.tbl_eventos
+        LIMIT 800
       `,
     });
     const resultTickets = await executeQueryBdAll({

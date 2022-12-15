@@ -53,6 +53,74 @@ export function EventList({ events }) {
     router.push(`/${event.eve_cod}`);
   };
 
+  const countTodaySold = (event) => {
+    return event.ingressos.filter((ing) => {
+      return (
+        new Date(ing.ing_data_compra).toLocaleString("pt-BR", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        }) ===
+        new Date().toLocaleString("pt-br", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        })
+      );
+    }).length;
+  };
+
+  const showAllSoldMoney = (event) => {
+    let sumTodayEvents = 0;
+
+    event.ingressos.map((ing) => {
+      sumTodayEvents += ing.ing_valor;
+    });
+
+    return sumTodayEvents.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  };
+
+  const showTodaySoldMoney = (event) => {
+    let sumTodayEvents = 0;
+
+    event.ingressos.map((ing) => {
+      if (
+        new Date(ing.ing_data_compra).toLocaleString("pt-BR", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        }) ===
+        new Date().toLocaleString("pt-br", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        })
+      ) {
+        sumTodayEvents += ing.ing_valor;
+      }
+    });
+
+    return sumTodayEvents.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  };
+
+  const showAllCourtesy = (event) => {
+    let sumAllCourtesy = 0;
+
+    event.ingressos.map((ing) => {
+      if (ing.ing_valor === 0) {
+        sumAllCourtesy++;
+      }
+    });
+
+    return sumAllCourtesy;
+  };
+
   return (
     <Paper sx={{ width: "100%" }}>
       <TableContainer sx={{ maxHeight: 540 }}>
@@ -197,27 +265,7 @@ export function EventList({ events }) {
                             )} dias para o evento`}
                       </Typography>
                     </TableCell>
-                    <TableCell>
-                      {
-                        event.ingressos.filter((ing) => {
-                          return (
-                            new Date(ing.ing_data_compra).toLocaleString(
-                              "pt-BR",
-                              {
-                                year: "numeric",
-                                month: "numeric",
-                                day: "numeric",
-                              }
-                            ) ===
-                            new Date().toLocaleString("pt-br", {
-                              year: "numeric",
-                              month: "numeric",
-                              day: "numeric",
-                            })
-                          );
-                        }).length
-                      }
-                    </TableCell>
+                    <TableCell>{countTodaySold(event)}</TableCell>
                     <TableCell>
                       <strong>
                         <Typography
@@ -225,32 +273,11 @@ export function EventList({ events }) {
                           component="span"
                           color="success.main"
                         >
-                          R$ 480,00
-                          {event.ingressos
-                            .filter((ing) => {
-                              return (
-                                new Date(ing.ing_data_compra).toLocaleString(
-                                  "pt-BR",
-                                  {
-                                    year: "numeric",
-                                    month: "numeric",
-                                    day: "numeric",
-                                  }
-                                ) ===
-                                new Date().toLocaleString("pt-br", {
-                                  year: "numeric",
-                                  month: "numeric",
-                                  day: "numeric",
-                                })
-                              );
-                            })
-                            .map((i) => {
-                              return <>{i.ing_valor}ss</>;
-                            })}
+                          {showTodaySoldMoney(event)}
                         </Typography>
                       </strong>
                     </TableCell>
-                    <TableCell>0</TableCell>
+                    <TableCell>{showAllCourtesy(event)}</TableCell>
                     <TableCell>{event.ingressos.length}</TableCell>
                     <TableCell>
                       <strong>
@@ -259,8 +286,7 @@ export function EventList({ events }) {
                           component="span"
                           color="success.main"
                         >
-                          R$ 17.060,00
-                          {event.ingressos.map}
+                          {showAllSoldMoney(event)}
                         </Typography>
                       </strong>
                     </TableCell>

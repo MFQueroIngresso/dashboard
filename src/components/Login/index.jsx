@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Link from "next/link";
 import Head from "next/head";
+import { useAuthContext } from "../../../context/providers/AuthContext";
 
 function Copyright(props) {
   return (
@@ -35,7 +36,10 @@ function Copyright(props) {
 const theme = createTheme();
 
 export function Login() {
+  const { user, error, loading } = useAuthContext();
+
   const handleSubmit = (event) => {
+    console.log(user);
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -113,18 +117,14 @@ export function Login() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Lembrar meus dados"
               />
-              <Link href="/dashboard">
-                <a>
-                  <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
-                  >
-                    Entrar
-                  </Button>
-                </a>
-              </Link>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Entrar
+              </Button>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">

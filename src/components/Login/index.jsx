@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -36,14 +37,13 @@ function Copyright(props) {
 const theme = createTheme();
 
 export function Login() {
-  const { user, error, loading } = useAuthContext();
+  const { handleUserLogin, error, loading } = useAuthContext();
 
   const handleSubmit = (event) => {
-    console.log(user);
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
+    handleUserLogin({
+      login: data.get("login"),
       password: data.get("password"),
     });
   };
@@ -67,7 +67,7 @@ export function Login() {
           item
           xs={12}
           sm={8}
-          md={3}
+          md={4}
           component={Paper}
           elevation={6}
           square
@@ -97,10 +97,10 @@ export function Login() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
+                id="login"
                 label="Login"
-                name="email"
-                autoComplete="email"
+                name="login"
+                autoComplete="login"
                 autoFocus
               />
               <TextField
@@ -113,18 +113,27 @@ export function Login() {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Lembrar meus dados"
-              />
+              /> */}
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                disabled={loading ? true : false}
               >
-                Entrar
+                {loading ? "Entrando, aguarde..." : "Entrar"}
               </Button>
+              {error && (
+                <Stack sx={{ width: "100%" }} spacing={3}>
+                  <Alert severity="error">
+                    Dados Incorretos — Tente Novamente!
+                  </Alert>
+                  <br />
+                </Stack>
+              )}
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
